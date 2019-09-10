@@ -26,6 +26,7 @@ rect_t canonicalize(rect_t r) {
     
   return r;
 }
+
 rect_t intersection(rect_t r1, rect_t r2) {
   
   r1 = canonicalize(r1);
