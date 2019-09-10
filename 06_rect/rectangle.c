@@ -3,28 +3,63 @@
 //I've provided "min" and "max" functions in
 //case they are useful to you
 int min (int a, int b) {
-  if (a < b) {
-    return a;
-  }
-  return b;
+  return a < b ? a : b;
 }
 int max (int a, int b) {
-  if (a > b) {
-    return a;
-  }
-  return b;
+  return a > b ? a : b;
 }
 
 //Declare your rectangle structure here!
+typedef struct rectangle_t {
+  int x, y, width, height;
+} rect_t;
 
 
-rectangle canonicalize(rectangle r) {
-  //WRITE THIS FUNCTION
+rect_t canonicalize(rect_t r) {
+  if (r.width < 0) {
+    r.x = r.x + r.width;
+    r.width = -(r.width);
+  }
+  if(r.height < 0) {
+    r.y = r.y + r.height;
+    r.height = -(r.height);
+  }
+    
   return r;
 }
-rectangle intersection(rectangle r1, rectangle r2) {
-  //WRITE THIS FUNCTION
-  return r1;
+rect_t intersection(rect_t r1, rect_t r2) {
+  
+  r1 = canonicalize(r1);
+  r2 = canonicalize(r2);
+
+  rect_t rIntersect = {0, 0, 0, 0};
+
+  if ((r1.width == 0 && r1.height == 0) || (r2.width == 0 && r2.height == 0) ) {
+    return rIntersect;
+  } 
+
+  rect_t intersectionRect = {0, 0, 0, 0};
+
+  int leftX   = max( r1.x, r2.x );
+  int rightX  = min( r1.x + r1.width, r2.x + r2.width );
+  int topY    = max( r1.y, r2.y );
+  int bottomY = min( r1.y + r1.height, r2.y + r2.height );
+
+  
+
+  if ( leftX < rightX && topY < bottomY ) {
+    rIntersect.x = leftX;
+    rIntersect.y = topY;
+    rIntersect.width = rightX - leftX;
+    rIntersect.height = bottomY - topY;
+    return rIntersect;
+  
+  } 
+
+  
+
+  return rIntersect;
+
 }
 
 //You should not need to modify any code below this line
@@ -32,18 +67,16 @@ void printRectangle(rectangle r) {
   r = canonicalize(r);
   if (r.width == 0 && r.height == 0) {
     printf("<empty>\n");
-  }
-  else {
-    printf("(%d,%d) to (%d,%d)\n", r.x, r.y, 
-	                           r.x + r.width, r.y + r.height);
+  } else {
+    printf("(%d,%d) to (%d,%d)\n", r.x, r.y, r.x + r.width, r.y + r.height);
   }
 }
 
 int main (void) {
-  rectangle r1;
-  rectangle r2;
-  rectangle r3;
-  rectangle r4;
+  rect_t r1;
+  rect_t r2;
+  rect_t r3;
+  rect_t r4;
 
   r1.x = 2;
   r1.y = 3;
@@ -74,7 +107,7 @@ int main (void) {
   printRectangle(r4);
 
   //test everything with r1
-  rectangle i = intersection(r1,r1);
+  rect_t i = intersection(r1,r1);
   printf("intersection(r1,r1): ");
   printRectangle(i);
 
