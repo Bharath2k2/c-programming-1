@@ -13,7 +13,7 @@ int max (int a, int b) {
 typedef struct rectangle_t {
   int x, y, width, height;
 } rect_t;
-git
+
 
 rect_t canonicalize(rect_t r) {
   if (r.width < 0) {
@@ -37,8 +37,6 @@ rect_t intersection(rect_t r1, rect_t r2) {
   if ((r1.width == 0 && r1.height == 0) || (r2.width == 0 && r2.height == 0) ) {
     return rIntersect;
   } 
-
-  rect_t intersectionRect = {0, 0, 0, 0};
 
   int leftX   = max( r1.x, r2.x );
   int rightX  = min( r1.x + r1.width, r2.x + r2.width );
