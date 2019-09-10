@@ -35,7 +35,8 @@ rect_t intersection(rect_t r1, rect_t r2) {
 
   if ((r1.width == 0 && r1.height == 0) || (r2.width == 0 && r2.height == 0) ) {
     return rIntersect;
-  } 
+  }
+
 
   int leftX   = max( r1.x, r2.x );
   int rightX  = min( r1.x + r1.width, r2.x + r2.width );
@@ -44,16 +45,14 @@ rect_t intersection(rect_t r1, rect_t r2) {
 
   
 
-  if ( leftX < rightX && topY < bottomY ) {
+  if ( leftX <= rightX && topY <= bottomY ) {
     rIntersect.x = leftX;
     rIntersect.y = topY;
     rIntersect.width = rightX - leftX;
     rIntersect.height = bottomY - topY;
     return rIntersect;
   
-  } 
-
-  
+  }   
 
   return rIntersect;
 
