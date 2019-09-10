@@ -1,29 +1,57 @@
-Grading at Tue Sep 10 03:00:32 UTC 2019
+Grading at Tue Sep 10 04:36:51 UTC 2019
 Attempting to compile rectangle.c
 Tring to run rectangle
-Line_16_did_not_match
-Line_19_did_not_match
-Your file did not match the expected ouput
-Your output did not match what we expected. Here is what you printed
-r1 is (2,3) to (7,9)
-r2 is (-1,-2) to (4,5)
-r3 is (-2,-3) to (5,7)
-r4 is (-4,7) to (0,9)
-intersection(r1,r1): (2,3) to (7,9)
-intersection(r1,r2): (2,3) to (4,5)
-intersection(r1,r3): (2,3) to (5,7)
-intersection(r1,r4): <empty>
-intersection(r2,r1): (2,3) to (4,5)
-intersection(r2,r2): (-1,-2) to (4,5)
-intersection(r2,r3): (-1,-2) to (4,5)
-intersection(r2,r4): <empty>
-intersection(r3,r1): (2,3) to (5,7)
-intersection(r3,r2): (-1,-2) to (4,5)
-intersection(r3,r3): (-2,-3) to (5,7)
-intersection(r3,r4): <empty>
-intersection(r4,r1): <empty>
-intersection(r4,r2): <empty>
-intersection(r4,r3): <empty>
-intersection(r4,r4): (-4,7) to (0,9)
+Your file matched the expected output
+removing your main() and replacing it with out own to run more tests...
+temp2.c: In function ‘main’:
+temp2.c:178:3: error: unknown type name ‘rectangle’
+   rectangle r1, r2;
+   ^
+temp2.c:179:5: error: request for member ‘x’ in something not a structure or union
+   r1.x = atoi(argv[1]);
+     ^
+temp2.c:180:5: error: request for member ‘y’ in something not a structure or union
+   r1.y = atoi(argv[2]);
+     ^
+temp2.c:181:5: error: request for member ‘width’ in something not a structure or union
+   r1.width = atoi(argv[3]);
+     ^
+temp2.c:182:5: error: request for member ‘height’ in something not a structure or union
+   r1.height = atoi(argv[4]);
+     ^
+temp2.c:183:5: error: request for member ‘x’ in something not a structure or union
+   r2.x = atoi(argv[5]);
+     ^
+temp2.c:184:5: error: request for member ‘y’ in something not a structure or union
+   r2.y = atoi(argv[6]);
+     ^
+temp2.c:185:5: error: request for member ‘width’ in something not a structure or union
+   r2.width = atoi(argv[7]);
+     ^
+temp2.c:186:5: error: request for member ‘height’ in something not a structure or union
+   r2.height = atoi(argv[8]);
+     ^
+temp2.c:187:3: error: unknown type name ‘rectangle’
+   rectangle i = intersection(r1, r2);
+   ^
+temp2.c:187:30: error: incompatible type for argument 1 of ‘intersection’
+   rectangle i = intersection(r1, r2);
+                              ^
+temp2.c:29:8: note: expected ‘rect_t {aka struct rectangle_t}’ but argument is of type ‘int’
+ rect_t intersection(rect_t r1, rect_t r2) {
+        ^
+temp2.c:187:34: error: incompatible type for argument 2 of ‘intersection’
+   rectangle i = intersection(r1, r2);
+                                  ^
+temp2.c:29:8: note: expected ‘rect_t {aka struct rectangle_t}’ but argument is of type ‘int’
+ rect_t intersection(rect_t r1, rect_t r2) {
+        ^
+temp2.c:189:18: error: incompatible type for argument 1 of ‘printRectangle’
+   printRectangle(i);
+                  ^
+temp2.c:61:6: note: expected ‘rect_t {aka struct rectangle_t}’ but argument is of type ‘int’
+ void printRectangle(rect_t r) {
+      ^
+Could not replace your main function to test further
 
 Overall Grade: F
