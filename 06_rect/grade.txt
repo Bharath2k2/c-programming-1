@@ -1,17 +1,28 @@
-Grading at Tue Sep 10 02:43:31 UTC 2019
+Grading at Tue Sep 10 02:53:41 UTC 2019
 Attempting to compile rectangle.c
+rectangle.c:16:1: error: unknown type name ‘git’
+ git
+ ^
+rectangle.c:18:8: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘canonicalize’
+ rect_t canonicalize(rect_t r) {
+        ^
 rectangle.c: In function ‘intersection’:
+rectangle.c:32:8: error: implicit declaration of function ‘canonicalize’ [-Werror=implicit-function-declaration]
+   r1 = canonicalize(r1);
+        ^
+rectangle.c:32:6: error: incompatible types when assigning to type ‘rect_t {aka struct rectangle_t}’ from type ‘int’
+   r1 = canonicalize(r1);
+      ^
+rectangle.c:33:6: error: incompatible types when assigning to type ‘rect_t {aka struct rectangle_t}’ from type ‘int’
+   r2 = canonicalize(r2);
+      ^
 rectangle.c:41:10: error: unused variable ‘intersectionRect’ [-Werror=unused-variable]
    rect_t intersectionRect = {0, 0, 0, 0};
           ^
-rectangle.c: At top level:
-rectangle.c:66:21: error: unknown type name ‘rectangle’
- void printRectangle(rectangle r) {
-                     ^
-rectangle.c: In function ‘main’:
-rectangle.c:86:3: error: implicit declaration of function ‘printRectangle’ [-Werror=implicit-function-declaration]
-   printRectangle(r1);
-   ^
+rectangle.c: In function ‘printRectangle’:
+rectangle.c:67:5: error: incompatible types when assigning to type ‘rect_t {aka struct rectangle_t}’ from type ‘int’
+   r = canonicalize(r);
+     ^
 cc1: all warnings being treated as errors
 The code did not compile!
 
