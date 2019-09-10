@@ -13,7 +13,7 @@ int max (int a, int b) {
 typedef struct rectangle_t {
   int x, y, width, height;
 } rect_t;
-
+git
 
 rect_t canonicalize(rect_t r) {
   if (r.width < 0) {
@@ -63,7 +63,7 @@ rect_t intersection(rect_t r1, rect_t r2) {
 }
 
 //You should not need to modify any code below this line
-void printRectangle(rectangle r) {
+void printRectangle(rect_t r) {
   r = canonicalize(r);
   if (r.width == 0 && r.height == 0) {
     printf("<empty>\n");
