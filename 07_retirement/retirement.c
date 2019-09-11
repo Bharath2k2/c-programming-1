@@ -67,5 +67,8 @@ int main(void)
 {
     retire_info working1 = {489, 1000, 0.045};
     retire_info retired1 = {384, -4000, 0.01};
+    
     retirement(327, 21345, working1, retired1);
+
+    return EXIT_SUCCESS;
 }
