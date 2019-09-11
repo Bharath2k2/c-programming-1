@@ -12,11 +12,7 @@ int max (int a, int b) {
 //Declare your rectangle structure here!
 typedef struct rectangle_t {
   int x, y, width, height;
-<<<<<<< HEAD
-}rect_t;
-=======
 } rectangle;
->>>>>>> 350def278e11cb343e1f605c4daa5091dd2e61d7
 
 rectangle canonicalize(rectangle r) {
   if (r.width < 0) {
