@@ -1,55 +1,55 @@
-Grading at Tue Sep 10 04:36:51 UTC 2019
+Grading at Wed Sep 11 00:22:31 UTC 2019
 Attempting to compile rectangle.c
 Tring to run rectangle
 Your file matched the expected output
 removing your main() and replacing it with out own to run more tests...
 temp2.c: In function ‘main’:
-temp2.c:178:3: error: unknown type name ‘rectangle’
+temp2.c:179:3: error: unknown type name ‘rectangle’
    rectangle r1, r2;
    ^
-temp2.c:179:5: error: request for member ‘x’ in something not a structure or union
+temp2.c:180:5: error: request for member ‘x’ in something not a structure or union
    r1.x = atoi(argv[1]);
      ^
-temp2.c:180:5: error: request for member ‘y’ in something not a structure or union
+temp2.c:181:5: error: request for member ‘y’ in something not a structure or union
    r1.y = atoi(argv[2]);
      ^
-temp2.c:181:5: error: request for member ‘width’ in something not a structure or union
+temp2.c:182:5: error: request for member ‘width’ in something not a structure or union
    r1.width = atoi(argv[3]);
      ^
-temp2.c:182:5: error: request for member ‘height’ in something not a structure or union
+temp2.c:183:5: error: request for member ‘height’ in something not a structure or union
    r1.height = atoi(argv[4]);
      ^
-temp2.c:183:5: error: request for member ‘x’ in something not a structure or union
+temp2.c:184:5: error: request for member ‘x’ in something not a structure or union
    r2.x = atoi(argv[5]);
      ^
-temp2.c:184:5: error: request for member ‘y’ in something not a structure or union
+temp2.c:185:5: error: request for member ‘y’ in something not a structure or union
    r2.y = atoi(argv[6]);
      ^
-temp2.c:185:5: error: request for member ‘width’ in something not a structure or union
+temp2.c:186:5: error: request for member ‘width’ in something not a structure or union
    r2.width = atoi(argv[7]);
      ^
-temp2.c:186:5: error: request for member ‘height’ in something not a structure or union
+temp2.c:187:5: error: request for member ‘height’ in something not a structure or union
    r2.height = atoi(argv[8]);
      ^
-temp2.c:187:3: error: unknown type name ‘rectangle’
+temp2.c:188:3: error: unknown type name ‘rectangle’
    rectangle i = intersection(r1, r2);
    ^
-temp2.c:187:30: error: incompatible type for argument 1 of ‘intersection’
+temp2.c:188:30: error: incompatible type for argument 1 of ‘intersection’
    rectangle i = intersection(r1, r2);
                               ^
-temp2.c:29:8: note: expected ‘rect_t {aka struct rectangle_t}’ but argument is of type ‘int’
+temp2.c:30:8: note: expected ‘rect_t {aka struct rectangle_t}’ but argument is of type ‘int’
  rect_t intersection(rect_t r1, rect_t r2) {
         ^
-temp2.c:187:34: error: incompatible type for argument 2 of ‘intersection’
+temp2.c:188:34: error: incompatible type for argument 2 of ‘intersection’
    rectangle i = intersection(r1, r2);
                                   ^
-temp2.c:29:8: note: expected ‘rect_t {aka struct rectangle_t}’ but argument is of type ‘int’
+temp2.c:30:8: note: expected ‘rect_t {aka struct rectangle_t}’ but argument is of type ‘int’
  rect_t intersection(rect_t r1, rect_t r2) {
         ^
-temp2.c:189:18: error: incompatible type for argument 1 of ‘printRectangle’
+temp2.c:190:18: error: incompatible type for argument 1 of ‘printRectangle’
    printRectangle(i);
                   ^
-temp2.c:61:6: note: expected ‘rect_t {aka struct rectangle_t}’ but argument is of type ‘int’
+temp2.c:62:6: note: expected ‘rect_t {aka struct rectangle_t}’ but argument is of type ‘int’
  void printRectangle(rect_t r) {
       ^
 Could not replace your main function to test further
