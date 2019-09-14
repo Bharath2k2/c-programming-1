@@ -1,7 +1,48 @@
+aaaaa aaaaa
+aaaaa aaaac
+aaaaa aaacc
+aaaaa aaccc
+aaaaa acccc
+aaaaa ccccc
+aaaab aaaaa
 aaaab aaaac
-aaasc aaass
-12345 -2321
-_____  _____
-            
- asdf   asdf
- fagg   ggaa
+aaaab aaacc
+aaaab aaccc
+aaaab acccc
+aaaab ccccc
+aaabb aaaaa
+aaabb aaaac
+aaabb aaacc
+aaabb aaccc
+aaabb acccc
+aaabb ccccc
+aabbb aaaac
+aabbb aaacc
+aabbb aaccc
+aabbb acccc
+aabbb ccccc
+abbbb aaaaa
+abbbb aaaac
+abbbb aaacc
+abbbb aaccc
+abbbb acccc
+abbbb ccccc
+bbbbb aaaaa
+bbbbb aaaac
+bbbbb aaacc
+bbbbb aaccc
+bbbbb acccc
+bbbbb ccccc
+Aaaaa bbbbb
+Aaaaa Bbbbb
+aaaaa Bbbbb
+$$$$$ aaaaa
+$$$qq aaaaa
+$$+-# aabbb
+$$$+_ aabbc
+12bbb aabbb
+bbaac 11133
+
+4 5 6 a b c
+///// /////
+\\\\\ \\\\\
