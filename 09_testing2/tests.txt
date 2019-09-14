@@ -120,7 +120,7 @@ aaaaa
 2+2=4 aaaaa
 22222222222
 2
-           
+             
 ccccc бииии
 блять йобан
       qqqqq
@@ -174,4 +174,23 @@ TaTbT ZaZZZ
  3444
 ***5A AAb*2
 \0 \0
+    4 4444 
+a11AA b22ZZ
+a11AA b2ZZZ
+a11AA bZZZZ
+a11AA ZZZZZ
+F$$55 a%0$$
+F$$55 a%$$$
+F$$55 a$$$$
+F$$55 $$$$$
+a^,}( 1PaKK
+a^,}( 1PKKK
+a^,}( 1KKKK
+a^,}( KKKKK
+aAAAA aaaaa
+aAAAA aaaaA
+aAAAA aaaAA
+aAAAA aaAAA
+aAAAA aAAAA
+aAAAA AAAAA
 
