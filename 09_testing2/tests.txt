@@ -168,3 +168,9 @@ QQQQQ 11111
 $$$$$ 22222
 %%%55 !!AAA
 bbbb! zzz22
+||\\\      
+----- +++++
+99900 99900
+AAABC AAABB
+aaAAA aaaBb
+TaTbT ZaZZZ
