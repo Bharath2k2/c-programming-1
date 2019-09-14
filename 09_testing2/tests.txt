@@ -147,3 +147,8 @@ abcdd @1(2)
 [s14] ["'"]
 \|||| ----+
 <abc> <\|/>
+AAAAA BBB12
+BBB$$ GGGG%
+((((())))))
+0xfff 0xGGg
+1     11
