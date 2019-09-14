@@ -1,154 +1,17 @@
-aaaaa aaaaa
-aaaaa aaaac
-aaaaa aaacc
-aaaaa aaccc
-aaaaa acccc
-aaaaa ccccc
-aaaab aaaaa
-aaaab aaaac
-aaaab aaacc
-aaaab aaccc
-aaaab acccc
-aaaab ccccc
-aaabb aaaaa
-aaabb aaaac
-aaabb aaacc
-aaabb aaccc
-aaabb acccc
-aaabb ccccc
-aabbb aaaac
-aabbb aaacc
-aabbb aaccc
-aabbb acccc
-aabbb ccccc
-abbbb aaaaa
-abbbb aaaac
-abbbb aaacc
-abbbb aaccc
-abbbb acccc
-abbbb ccccc
-bbbbb aaaaa
-bbbbb aaaac
-bbbbb aaacc
-bbbbb aaccc
-bbbbb acccc
-bbbbb ccccc
+a a a
+a a
+a
+4.537 3.212
+AAACC AAAGF
+aaacc AAAC
+AAAAC AACCF
+000000 000000
+asdfg aadfg
+asdfg aaafg
+asdfg aaaag
+asdfg aaaaa
+aaafg ssddf
+aaafg aaaaf
+aaafg aaaaa
 Aaaaa bbbbb
-Aaaaa Bbbbb
-aaaaa Bbbbb
-$$$$$ aaaaa
-$$$qq aaaaa
-$$+-# aabbb
-$$$+_ aabbc
-12bbb aabbb
-bbaac 11133
-
-4 5 6 a b c
-///// /////
-\\\\\ \\\\\
-""""" """""
-""""" aaa12
-11222 aaaa2
-AAAaa bbbbA
-AAAAa bbbbb
-AAAAA bbbbb
-AAAAb bbbbA
-AAAAb bbbAA
-AAAAb bbAAA
-AAAbb bAAAA
-AAAbb AAAAA
-AAbbb AAAAA
-AAbbb AAAAb
-AAbbb AAAbb
-AAbbb AAbbb
-AAbbb Abbbb
-AAbbb bbbbb
-Abbbb AAAAA
-Abbbb AAAAb
-Abbbb AAAbb
-Abbbb AAbbb
-Abbbb Abbbb
-Abbbb bbbbb
-44444 55555
-44444 55553
-44444 55533
-44444 55333
-44444 53333
-44444 33333
-44441 55555
-44441 55553
-44441 55533
-44441 55333
-44441 53333
-44441 33333
-44411 55555
-44411 55553
-44411 55533
-44411 55333
-44411 53333
-44411 33333
-44111 55555
-44111 55553
-44111 55533
-44111 55333
-44111 53333
-44111 33333
-41111 55555
-41111 55553
-41111 55533
-41111 55333
-41111 53333
-41111 33333
-11111 55555
-11111 55553
-11111 55533
-11111 55333
-11111 53333
-11111 33333
-$$$$$ %%%%%
-$$$$$ %%%%#
-$$$$$ $$$$$
-$ $$$ 22111
-<<<<< >>>>>
-<<>>, <<.<<
-"""<  <<<..
-~~~~  matil
-&&&&  &&&&&
-    qqqqqqq
-aaaaa      
-aaaaa
-2+2=4 aaaaa
-22222222222
-2
-
-ccccc бииии
-блять йобан
-      qqqqq
-     q
-7777  88888
-000000000
-00000 00000
-
-,,,,, ,....
-QQQQQ      
-ZZzzz ,,,43
-000000
-aaaaaa
-ЯЯЯЯЯ ЯЯЯЯБ
-^^^^) 6^&&&
-(...) {,,,}
-"111" .....;
-;;;;: :::::::::::::::
-11111111 2222222222
-abcdd @1(2)
-      111111113
-      BBBBBB
-'abc' '123'
-[s14] ["'"]
-\|||| ----+
-<abc> <\|/>
-AAAAA BBB12
-BBB$$ GGGG%
-((((())))))
-0xfff 0xGGg
-1     11
+55555 555555
