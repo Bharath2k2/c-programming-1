@@ -193,4 +193,25 @@ aAAAA aaaAA
 aAAAA aaAAA
 aAAAA aAAAA
 aAAAA AAAAA
+aaaaa aaaaa
+Aaaaa aaaaa
+AAaaa aaaaa
+AAAaa aaaaa
+AAAAa aaaaa
+AAAAA aaaaa
+44444 aaaaa
+4444a aaaaa
+444aa aaaaa
+44aaa aaaaa
+4aaaa aaaaa
+aaaaa 4aaaa
+aaaaa 45aaa
+aaaaa 456aa
+aaaaa 4567a
+aaaaa 45678
+.a.b. 3.4.5
+...b. 3.4.5
+..... 3.4.5
+
+
 
