@@ -228,3 +228,11 @@ AAdfh AArty
 AAAbc AAAbc
 AAAAc AAAAb
 AAAAA AAAAA
+AAAAA aaaaa
+BBBBb Bbbbb
+BBBbb BbbbB
+$$$5a AAA$2
++++-- )))[]
+12334 12433
+AaaaA aaaAA
+ZzzZz zzZZz
