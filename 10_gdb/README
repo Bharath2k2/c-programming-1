@@ -1,7 +1,7 @@
 For this assignment, you will be practicing with the basics
 of gdb.  You will want to use gdb extensively during the rest
 of the semester, as it is an incredibly useful tool to gather
-information during the debugging process.  For now, we 
+information during the debugging process. For now, we 
 are just going to get started with some basic commands.
 Be sure you have done the readings and watched
 the video on gdb. 
