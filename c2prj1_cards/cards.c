@@ -30,9 +30,10 @@ const char* ranking_to_string(hand_ranking_t r)
       return "TWO_PAIR";
     case PAIR:
       return "PAIR";
-    default:
+    case NOTHING:
       return "NOTHING";
   }
+  return "";
 }
 
 char value_letter(card_t c) 
