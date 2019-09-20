@@ -23,7 +23,7 @@ const char* ranking_to_string(hand_ranking_t r)
     case FLUSH:
       return "FLUSH";
     case STRAIGHT:
-      return "straight";
+      return "STRAIGHT";
     case THREE_OF_A_KIND:
       return "THREE_OF_A_KIND";
     case TWO_PAIR:
