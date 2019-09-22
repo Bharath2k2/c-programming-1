@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 0c 0s 8s 7d 6d 6s 5c; Js 0s 8s 7d 6s 5c 4c 
 0s 6c Kc 9s Qh Jd Ad; 7s 8d 0s 9s Jd Ad 6c 
 2c 4d Kc Jd 7s 9h 2d; 4d 9h 2c 4d As Ad Kc 
@@ -15,24 +13,18 @@ As Ks Qs Jd 0d Qh 7d; 2s As Ks Jd 9h 0c 2d
 2c 3d 4d 5d 6d 8d Ad; 2d 3d 4d 5d 6d 7d Ad 
 2s 3s 4c 5c 6c 8c Ac; 2s 3s 4s 5s 6s 8c Ac
 0c Ks Jh Qd Ah 7s 6c; Ks Ah Jh Qd 0s 7s 6c
->>>>>>> c42040d420c2535e1fc5dd171513bf18b2654092
 As Ad Kc Kh 0s 7c 3h; Ks Kc Kd 0h 0s 5c 4d
 Ks Kd Ac 9h 7s 3c 2h; Ks Kd 8c 9h 7s 3c 2h
 As Ad Kc Kh 0s 7c 3h; 0s 0c 0d 0h Qs 5c 4d
 Jc 0c 9s 8s 7s 6s 5s; Jc 0s 9s 8s 7s 6c 5s
-<<<<<<< HEAD
 Js 0s 9s 8s 7d 6s 5c; Ks 0s 9s 8s 7d 6s 5c
 0c 0s 8s 7d 6d 6s 5c; Js 0s 8s 7d 6s 5c 4c
-=======
 Js 0s 9s 8s 7d 6s 5c; Ks 0s 9s 8s 7d 6s 5c 
 0c 0s 8s 7d 6d 6s 5c; Js 0s 8s 7d 6s 5c 4c 
->>>>>>> c42040d420c2535e1fc5dd171513bf18b2654092
 Js Js 9s 8s 7d 6h 6d; Js Js 9d 8d 8h 5h 5c
 Ks Kd Ac 9h 7s 3c 2h; Ks Kd Ac 9h 5s 3c 2h
 Ks Kd Kc Ah 5s 4c 3h; Ks Kd Kc Ah 7s 3c 2h
 Js Qc 5d 4h 3s 2h 0d; Ks Qd Jc 0h 9s 5c 4h
-<<<<<<< HEAD
 As Qs 8s 7s 4s 3c 2d; Ks Kc Kd 0h 0s 5c 1d
-=======
 As Qs 8s 7s 4s 3c 2d; Ks Kc Kd 0h 0s 5c 1d
->>>>>>> c42040d420c2535e1fc5dd171513bf18b2654092
+
