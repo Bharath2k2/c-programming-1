@@ -8,7 +8,7 @@ typedef enum {
   SPADES,
   HEARTS,
   DIAMONDS,
-  CLUBS,
+  CLUBS,  
   NUM_SUITS
 } suit_t;
 
