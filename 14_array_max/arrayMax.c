@@ -12,11 +12,11 @@ int * arrayMax(int * array, int n)
   int maxIndex = array[0];
   int indexToCompare = n - 1;
   
-  for(int i = 0; i < indexToCompare; ++i)
+  for(int i = 1; i < indexToCompare; ++i)
     {
-      if(maxIndex < array[i+1])
+      if(maxIndex < array[i])
       {
-        pointerToMax = &array[i+1];
+        pointerToMax = &array[i];
       }
     }
 
