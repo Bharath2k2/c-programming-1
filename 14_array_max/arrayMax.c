@@ -16,6 +16,7 @@ int * arrayMax(int * array, size_t n)
       if(maxIndex < array[i])
       {
         pointerToMax = &array[i];
+        maxIndex = array[i];
       }
     }
 
