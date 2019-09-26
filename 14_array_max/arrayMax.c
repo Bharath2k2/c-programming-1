@@ -1,8 +1,26 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int * arrayMax(int * array, int n) {
-  return NULL;
+int * arrayMax(int * array, int n) 
+{
+  if(n <= 0)
+  {
+    return NULL;
+  }
+
+  int * pointerToMax = &array[0];
+  int maxIndex = array[0];
+  int indexToCompare = n - 1;
+  
+  for(int i = 0; i < indexToCompare; ++i)
+    {
+      if(maxIndex < array[i+1])
+      {
+        pointerToMax = &array[i+1];
+      }
+    }
+
+  return pointerToMax;
 }
 
 void doTest(int * array, int n) {
