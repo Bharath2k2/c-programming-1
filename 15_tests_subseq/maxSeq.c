@@ -24,11 +24,6 @@ size_t maxSeq(int * array, size_t n)
             tempLength = 0;
         }
     
-    }
-    if(newLength != 0)
-    {
-        return newLength + 1;
-    }
     return newLength;
 }
 
