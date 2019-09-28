@@ -12,7 +12,7 @@ do
     echo "-------------------------------------"
     echo ""
 
-    gcc -o test-subseq test-subseq.c $i
+    gcc -o test-subseq test-subseq.c $i 
     if [ "$?" != "0" ]
     then
 	echo "Could not compile test-subseq.c with $i" > /dev/stderr
