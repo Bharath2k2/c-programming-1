@@ -26,7 +26,7 @@ int main(void)
     printf("Failed on NULL\n");
     exit(EXIT_FAILURE);
   }
-  if (maxSeq(array1, 6) != 6) 
+  if (maxSeq(array1, 6) != 5) 
   {
     printf("Failed on 1,2,3,4,5,6\n");
     exit(EXIT_FAILURE);
