@@ -9,7 +9,7 @@ size_t maxSeq(int *array, size_t n)
     size_t newLength = 0;
     size_t arraySize = sizeof(array)/sizeof(array[0]);
 
-    if(n < 1 || array == NULL || arraySize < 1)
+    if(n <= 1 || array == NULL || arraySize <= 1)
     {
         return 0;
     }
@@ -19,14 +19,11 @@ size_t maxSeq(int *array, size_t n)
         {
             tempLength++;
         }
-        if((array[i] > array[i+1]) || i == n-2)
+        if((array[i] >= array[i+1]) || i == n-2)
         {
             newLength = checkLength(tempLength, newLength);
             tempLength = 0;
         }
-    }
-    if(newLength != 0){
-        return newLength + 1;
     }
     return newLength;
 }
