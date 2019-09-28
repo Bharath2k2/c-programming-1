@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-size_t checkLength(size_t tempLegnth, size_t newLength);
+size_t checkLength(size_t tempLength, size_t newLength);
 
 size_t maxSeq(int * array, size_t n)
 {
@@ -23,11 +23,6 @@ size_t maxSeq(int * array, size_t n)
             newLength = checkLength(tempLength, newLength);
             tempLength = 0;
         }
-    
-    }
-    if(newLength != 0)
-    {
-        return newLength + 1;
     }
     return newLength;
 }
