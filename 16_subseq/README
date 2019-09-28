@@ -9,7 +9,7 @@
      { 1, 2, 1, 3, 5, 7, 2, 4, 6, 9}
   
     this function would return 4 because the longest sequence
-    of (strictly) increasing numbers in that array is 1, 3, 5, 7
+    of (strictly) increasing numbers in that array is 1, 3, 5, 7, 9
     which has length 4.  Note that 1,3,5,7,9 is an increasing
     subsequence, but is not contiguous (finding discontiguous 
     ones efficiently takes techniques we haven't learned yet).
