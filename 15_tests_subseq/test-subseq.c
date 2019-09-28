@@ -1,9 +1,9 @@
-include <stdlib.h>
-#include <stdio.h>
+#include <stdlib.h>
+0;276;0c#include <stdio.h>
 
 size_t maxSeq(int * array, size_t n);
 
-int main() {
+int main(void) {
   int array1[] = {1, 2, 3, 2};
   int array2[] = {2, -3, 5, 6, 8};
   int array3[] = {5};
