@@ -4,7 +4,7 @@
 
 void reverse(char * str) {
   //WRITE ME!
-  if(strlen(str) != 1 || strlen(str) != 0){
+  if(str != NULL && strlen(str) > 1){
     for(int i = 0,j = strlen(str)-1; i<j; i++, j--){
           char temp = str[j];
           str[j] = str[i];
