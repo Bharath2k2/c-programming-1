@@ -4,10 +4,12 @@
 
 void reverse(char * str) {
   //WRITE ME!
-  for(int i = 0,j = strlen(str)-1; i<=j; i++, j--){
-      char temp = str[j];
-      str[j] = str[i];
-      str[i] = temp;
+  if(strlen(str) != 1 || strlen(str) != 0){
+    for(int i = 0,j = strlen(str)-1; i<j; i++, j--){
+          char temp = str[j];
+          str[j] = str[i];
+          str[i] = temp;
+      }
   }
 }
 
