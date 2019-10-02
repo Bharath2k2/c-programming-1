@@ -1,111 +1,19 @@
-Grading at Wed Oct  2 16:50:08 UTC 2019
+Grading at Wed Oct  2 16:51:06 UTC 2019
 Attempting to compile numToBits.c
-numToBits.c:1:1: error: stray ‘\’ in program
- \#include <stdio.h>
- ^
-numToBits.c:1:2: error: stray ‘#’ in program
- \#include <stdio.h>
-  ^
-numToBits.c:1:11: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘<’ token
- \#include <stdio.h>
-           ^
-In file included from numToBits.c:2:0:
-/usr/include/stdlib.h:139:8: error: unknown type name ‘size_t’
- extern size_t __ctype_get_mb_cur_max (void) __THROW __wur;
-        ^
-In file included from numToBits.c:2:0:
-/usr/include/stdlib.h:331:4: error: unknown type name ‘size_t’
-    size_t __statelen) __THROW __nonnull ((2));
-    ^
-/usr/include/stdlib.h:361:4: error: unknown type name ‘size_t’
-    size_t __statelen,
-    ^
-/usr/include/stdlib.h:466:22: error: unknown type name ‘size_t’
- extern void *malloc (size_t __size) __THROW __attribute_malloc__ __wur;
-                      ^
-/usr/include/stdlib.h:468:22: error: unknown type name ‘size_t’
- extern void *calloc (size_t __nmemb, size_t __size)
-                      ^
-/usr/include/stdlib.h:468:38: error: unknown type name ‘size_t’
- extern void *calloc (size_t __nmemb, size_t __size)
-                                      ^
-/usr/include/stdlib.h:480:36: error: unknown type name ‘size_t’
- extern void *realloc (void *__ptr, size_t __size)
-                                    ^
-In file included from /usr/include/stdlib.h:492:0,
-                 from numToBits.c:2:
-/usr/include/alloca.h:32:22: error: unknown type name ‘size_t’
- extern void *alloca (size_t __size) __THROW;
-                      ^
-In file included from numToBits.c:2:0:
-/usr/include/stdlib.h:498:22: error: unknown type name ‘size_t’
- extern void *valloc (size_t __size) __THROW __attribute_malloc__ __wur;
-                      ^
-/usr/include/stdlib.h:503:45: error: unknown type name ‘size_t’
- extern int posix_memalign (void **__memptr, size_t __alignment, size_t __size)
-                                             ^
-/usr/include/stdlib.h:503:65: error: unknown type name ‘size_t’
- extern int posix_memalign (void **__memptr, size_t __alignment, size_t __size)
-                                                                 ^
-/usr/include/stdlib.h:755:9: error: unknown type name ‘size_t’
-         size_t __nmemb, size_t __size, __compar_fn_t __compar)
-         ^
-/usr/include/stdlib.h:755:25: error: unknown type name ‘size_t’
-         size_t __nmemb, size_t __size, __compar_fn_t __compar)
-                         ^
-/usr/include/stdlib.h:764:34: error: unknown type name ‘size_t’
- extern void qsort (void *__base, size_t __nmemb, size_t __size,
-                                  ^
-/usr/include/stdlib.h:764:50: error: unknown type name ‘size_t’
- extern void qsort (void *__base, size_t __nmemb, size_t __size,
-                                                  ^
-/usr/include/stdlib.h:843:6: error: unknown type name ‘size_t’
-      size_t __len) __THROW __nonnull ((3, 4, 5));
-      ^
-/usr/include/stdlib.h:846:6: error: unknown type name ‘size_t’
-      size_t __len) __THROW __nonnull ((3, 4, 5));
-      ^
-/usr/include/stdlib.h:850:31: error: unknown type name ‘size_t’
-       char *__restrict __buf, size_t __len)
-                               ^
-/usr/include/stdlib.h:854:31: error: unknown type name ‘size_t’
-       char *__restrict __buf, size_t __len)
-                               ^
-/usr/include/stdlib.h:862:36: error: unknown type name ‘size_t’
- extern int mblen (const char *__s, size_t __n) __THROW;
-                                    ^
-/usr/include/stdlib.h:866:34: error: unknown type name ‘size_t’
-      const char *__restrict __s, size_t __n) __THROW;
-                                  ^
-/usr/include/stdlib.h:873:8: error: unknown type name ‘size_t’
- extern size_t mbstowcs (wchar_t *__restrict  __pwcs,
-        ^
-/usr/include/stdlib.h:874:32: error: unknown type name ‘size_t’
-    const char *__restrict __s, size_t __n) __THROW;
-                                ^
-/usr/include/stdlib.h:876:8: error: unknown type name ‘size_t’
- extern size_t wcstombs (char *__restrict __s,
-        ^
-/usr/include/stdlib.h:877:38: error: unknown type name ‘size_t’
-    const wchar_t *__restrict __pwcs, size_t __n)
-                                      ^
-numToBits.c: In function ‘getNthBit’:
-numToBits.c:11:5: error: implicit declaration of function ‘printf’ [-Werror=implicit-function-declaration]
-     printf("Bit %d is invalid\n", bit);
-     ^
-numToBits.c:11:5: error: incompatible implicit declaration of built-in function ‘printf’ [-Werror]
-numToBits.c:11:5: note: include ‘<stdio.h>’ or provide a declaration of ‘printf’
-numToBits.c: In function ‘numToBits’:
-numToBits.c:52:5: error: incompatible implicit declaration of built-in function ‘printf’ [-Werror]
-     printf("Invalid call to numToBits! nBits is %d, nNums is %d\n", nBits, nNums);
-     ^
-numToBits.c:52:5: note: include ‘<stdio.h>’ or provide a declaration of ‘printf’
-numToBits.c: In function ‘doTest’:
-numToBits.c:60:5: error: incompatible implicit declaration of built-in function ‘printf’ [-Werror]
-     printf(" %9d (%8X) => ", nums[i], nums[i]);
-     ^
-numToBits.c:60:5: note: include ‘<stdio.h>’ or provide a declaration of ‘printf’
-cc1: all warnings being treated as errors
-The code did not compile!
+Your file matched the expected output
+Your output matched what we expected
+Removing your main() and replacing it with our own to run more tests...
+#################################################
+testcase2:
+array size:0 was Correct
+#################################################
+testcase3:
+array size:1 was Correct
+#################################################
+testcase4:
+array size:100 was Correct
+#################################################
+testcase5:
+array size:5000 was Correct
 
-Overall Grade: F
+Overall Grade: A
