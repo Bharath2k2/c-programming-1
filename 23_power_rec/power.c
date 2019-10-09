@@ -10,7 +10,7 @@ unsigned powerTail(unsigned n, unsigned p, unsigned ans)
         return 0;
     }
 
-    if(p <= 0)
+    if(n <= 0 || p <= 0)
     {
         return ans;
     }
