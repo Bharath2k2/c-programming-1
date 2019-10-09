@@ -19,8 +19,8 @@ unsigned powerTail(unsigned n, unsigned p, unsigned ans)
     return powerTail(n, p-1, n*ans);
 }
 
-unsigned power(unsigned n, unsigned p){
-    return powerTail(n, p, 1);
+unsigned power(unsigned x, unsigned y){
+    return powerTail(x, y, 1);
 }
 
 //function using head recursion
