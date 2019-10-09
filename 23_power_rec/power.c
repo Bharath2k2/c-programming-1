@@ -20,7 +20,7 @@ unsigned powerTail(unsigned n, unsigned p, unsigned ans)
 }
 
 unsigned power(unsigned n, unsigned p){
-    powerTail(n, p, 1);
+    return powerTail(n, p, 1);
 }
 
 //function using head recursion
