@@ -14,7 +14,10 @@ unsigned powerTail(unsigned x, unsigned y, unsigned ans)
     {
         return ans;
     }
-    return powerTail(x, y-1, x*ans);
+    
+    
+    return powerTail(x, y-1, y*ans);
+
 }
 
 unsigned power(unsigned x, unsigned y){
