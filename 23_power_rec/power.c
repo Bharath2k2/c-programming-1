@@ -3,22 +3,22 @@
 
 //function using tail recursion
 
-unsigned powerTail(unsigned n, unsigned p, unsigned ans)
+unsigned powerTail(unsigned x, unsigned y, unsigned ans)
 {   
-    if(n == 0 && p != 0)
+    if(x == 0 && y != 0)
     {
         return 0;
     }
 
-    if(p == 0)
+    if(x <= 0 || y <= 0)
     {
         return ans;
     }
-    return powerTail(n, p-1, n*ans);
+    return powerTail(x, y-1, x*ans);
 }
 
-unsigned power(unsigned n, unsigned p){
-    powerTail(n, p, 1);
+unsigned power(unsigned x, unsigned y){
+    return powerTail(x, y, 1);
 }
 
 //function using head recursion
