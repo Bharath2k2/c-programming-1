@@ -16,7 +16,7 @@ unsigned powerTail(unsigned x, unsigned y, unsigned ans)
     }
     
     
-    return powerTail(x, y-1, y*ans);
+    return powerTail(x, y-1, x*ans);
 
 }
 
