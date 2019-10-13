@@ -3,9 +3,11 @@
 #include <assert.h>
 #include "deck.h"
 
+void assert_card_valid(card_t c);
+
 void print_hand(deck_t * hand)
 {
-  for(size_t i = 0; i < (*hand).n_cards; ++i)
+  for(size_t i = 0; i < *(*hand).n_cards; ++i)
   {
     print_card(*(*hand).cards[i]);
     printf(" ");
@@ -48,7 +50,7 @@ void assert_full_deck(deck_t * d)
     }
     for(size_t j = i + 1; j <= numberOfComparisons; ++j)
     {
-        assert((*(*d).cards[i] == *(*d).cards[j]));
+        assert((*(*d).cards[i].value != *(*d).cards[j].value)&&(*(*d).cads[i].suit != *(*d).cads[j].suit));
     }
   }
 }
