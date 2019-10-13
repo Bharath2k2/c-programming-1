@@ -10,9 +10,9 @@ void print_hand(deck_t * hand)
   size_t sizeOfArray = hand->n_cards;
   for(size_t i = 0; i < sizeOfArray; ++i)
   {
-    printf("hello");
+    printf(" hello ");
     print_card(*(hand->cards[i]));
-    printf(" hello again ");
+    printf(" hello again \n");
   }
 }
 
