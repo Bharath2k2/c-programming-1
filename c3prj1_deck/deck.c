@@ -7,7 +7,8 @@ void assert_card_valid(card_t c);
 
 void print_hand(deck_t * hand)
 {
-  for(size_t i = 0; i < hand->n_cards; ++i)
+  size_t sizeOfArray = hand->n_cards
+  for(size_t i = 0; i < sizeOfArray; ++i)
   {
     print_card(*(hand->cards[i]));
     printf(" ");
@@ -42,7 +43,7 @@ void shuffle(deck_t * d)
 void assert_full_deck(deck_t * d) 
 {
   size_t numberOfComparisons = d->n_cards;
-  for(size_t i = 0; i < numberOfComparisons-1; ++i)
+  for(size_t i = 0; i < (numberOfComparisons-1); ++i)
   {
     if(i != numberOfComparisons-2){
       assert_card_valid(*(d->cards[i]));
@@ -51,7 +52,7 @@ void assert_full_deck(deck_t * d)
     }
     for(size_t j = i + 1; j < numberOfComparisons; ++j)
     {
-      assert((d->cards[i]->value != d->cards[j]->value)&&(d->cards[i]->suit != d->cards[j]->suit));
+      assert((d->cards[i]->value != d->cards[j]->value) && (d->cards[i]->suit != d->cards[j]->suit));
     }
   }
 }
