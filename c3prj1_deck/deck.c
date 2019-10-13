@@ -9,7 +9,7 @@ void print_hand(deck_t * hand)
 {
   for(size_t i = 0; i < hand->n_cards; ++i)
   {
-    print_card(hand->cards[i]);
+    print_card(*(hand->cards[i]));
     printf(" ");
   }
 }
@@ -29,7 +29,7 @@ int deck_contains(deck_t * d, card_t c)
 void shuffle(deck_t * d)
 {
   //Use of the Fisher-Yates algorithm
-  for(size_t i = (*d).n_cards-1; i >= 1 ; --i)
+  for(size_t i = (d->n_cards)-1; i > 0 ; --i)
   {
     size_t randomIndex = random()%i;
     card_t **temp = d->cards[i];
@@ -44,9 +44,9 @@ void assert_full_deck(deck_t * d)
   for(size_t i = 0; i < numberOfComparisons; ++i)
   {
     if(i != numberOfComparisons-1){
-      assert_card_valid(d->cards[i]);
+      assert_card_valid(*(d->cards[i]));
     } else {
-      assert_card_valid(d->cards[i+1]);
+      assert_card_valid(*(d->cards[i+1]));
     }
     for(size_t j = i + 1; j <= numberOfComparisons; ++j)
     {
