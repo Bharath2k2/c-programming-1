@@ -44,7 +44,7 @@ void assert_full_deck(deck_t * d)
   for(size_t i = 0; i < numberOfComparisons; ++i)
   {
     if(i != numberOfComparisons-1){
-      assert_card_valid(d->cards[i]));
+      assert_card_valid(d->cards[i]);
     } else {
       assert_card_valid(d->cards[i+1]);
     }
