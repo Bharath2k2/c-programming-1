@@ -32,7 +32,7 @@ void shuffle(deck_t * d)
   for(size_t i = (d->n_cards)-1; i > 0 ; --i)
   {
     size_t randomIndex = random()%i;
-    card_t **temp = d->cards[i];
+    card_t *temp = d->cards[i];
     d->cards[i] = d->cards[randomIndex];
     d->cards[randomIndex] = temp;
   }
