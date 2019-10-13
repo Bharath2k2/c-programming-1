@@ -41,7 +41,7 @@ void shuffle(deck_t * d)
 void assert_full_deck(deck_t * d) 
 {
   size_t numberOfComparisons = (*d).n_cards-1;
-  for(size_t i = 0, j = 0; i < numberOfComparisons; ++i)
+  for(size_t i = 0; i < numberOfComparisons; ++i)
   {
     if(i != numberOfComparisons-1){
       assert_card_valid(*(*d).cards[i]);
