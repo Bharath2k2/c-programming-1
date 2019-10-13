@@ -7,7 +7,7 @@ void assert_card_valid(card_t c);
 
 void print_hand(deck_t * hand)
 {
-  size_t sizeOfArray = hand->n_cards;
+  size_t sizeOfArray = (hand->n_cards)-1;
   for(size_t i = 0; i < sizeOfArray; ++i)
   {
     print_card(*(hand->cards[i]));
