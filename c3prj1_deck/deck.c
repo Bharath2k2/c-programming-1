@@ -29,11 +29,11 @@ int deck_contains(deck_t * d, card_t c)
 
 void shuffle(deck_t * d)
 {
-  size_t sizOfArray = (d->n_cards)-1;
+  size_t sizeOfArray = d->n_cards;
   //Use of the Fisher-Yates algorithm
-  for(size_t i = sizOfArray; i > 0 ; --i)
+  for(size_t i = sizeOfArray-1; i > 0 ; --i)
   {
-    size_t randomIndex = random()%i;
+    size_t randomIndex = random()%(i+1);
     card_t *temp = d->cards[i];
     d->cards[i] = d->cards[randomIndex];
     d->cards[randomIndex] = temp;
