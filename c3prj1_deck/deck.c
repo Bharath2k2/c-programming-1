@@ -43,12 +43,13 @@ void shuffle(deck_t * d)
 
 void assert_full_deck(deck_t * d) 
 {
-  suit_t suits[] = {SPADES, HEARTS, DIAMONDS, CLUBS, NUM_SUITS};
-  for(int i = 2; i < VALUE_ACE; ++i){
-    for(suit_t j=SPADES; j < NUM_SUITS; ++j)
+  card_t k;
+  for(int i = SPADES; i < NUM_SUITS; ++i)
+  {
+    for(int j= 2; j <= VALUE_ACE; ++j)
     {
-
-      assert(deck_contains(d,card_t {i,suits[j]}) == 1);
+      k.value = i,k.suit =j;
+      assert(deck_contains(d,k) == 1);
     }
   }
 }
