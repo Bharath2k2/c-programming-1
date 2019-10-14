@@ -10,9 +10,7 @@ void print_hand(deck_t * hand)
   size_t sizeOfArray = hand->n_cards;
   for(size_t i = 0; i < sizeOfArray; ++i)
   {
-    printf(" hello ");
     print_card(*(hand->cards[i]));
-    printf(" hello again \n");
   }
 }
 
@@ -20,7 +18,7 @@ int deck_contains(deck_t * d, card_t c)
 {
   for(size_t i = 0; i < d->n_cards; ++i)
   {
-    if(c.value == d->cards[i]->value && c.suit == d->cards[i]->suit)
+    if((c.value == d->cards[i]->value) && (c.suit == d->cards[i]->suit))
     {
       return 1;
     }
@@ -34,7 +32,9 @@ void shuffle(deck_t * d)
   //Use of the Fisher-Yates algorithm
   for(size_t i = sizeOfArray-1; i > 0 ; --i)
   {
-    size_t randomIndex = random()%(i+1);
+    size_t randomIndex = random()%(i);
+
+    
     card_t *temp = d->cards[i];
     d->cards[i] = d->cards[randomIndex];
     d->cards[randomIndex] = temp;
@@ -48,7 +48,8 @@ void assert_full_deck(deck_t * d)
   {
     for(int j= 2; j <= VALUE_ACE; ++j)
     {
-      k.value = i,k.suit =j;
+      k.value = j;
+      k.suit =i;
       assert(deck_contains(d,k) == 1);
     }
   }
