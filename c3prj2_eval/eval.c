@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <assert.h>
 
-size_t min (int a, int b) { return a < b ? a : b; }
+size_t min(size_t a, size_t b) { return a < b ? a : b; }
 int card_ptr_comp(const void * vp1, const void * vp2) 
 {
   const card_t * const * cp1 =  vp1;
@@ -60,10 +60,10 @@ suit_t flush_suit(deck_t * hand)
         continue;
     }
   }
-  if(spades >= 5) return SPADES;
-  if(clubs >= 5) return CLUBS;
-  if(hearts >= 5) return HEARTS;
-  if(diamonds >= 5) return DIAMONDS;
+  if(spades >= 5) {return SPADES;}
+  if(clubs >= 5) {return CLUBS;}
+  if(hearts >= 5) {return HEARTS;}
+  if(diamonds >= 5) {return DIAMONDS;}
   return NUM_SUITS;
 }
 
@@ -82,27 +82,16 @@ unsigned get_largest_element(unsigned * arr, size_t n)
 
 size_t get_match_index(unsigned * match_counts, size_t n,unsigned n_of_akind)
 {
-  size_t kindIndex = 0;
-  int currentCount = 0;
-  for(size_t i = 0; i < n;)
+  size_t kindIndex = -1;
+  for(size_t i = 0; i < n; ++i)
   {
-    size_t offset = min(4,n-i);
-    for(int j = i; j < i+offset; ++j)
-    {
-      if(match_counts[i] == match_counts[j])
-      {
-        ++currentCount;
-      }
-    }
-    if(currentCount == n_of_akind)
+    if(match_counts[i]==n_of_akind)
     {
       kindIndex = i;
       break;
     }
-    i = i+currentCount; 
-    currentCount = 0;
   }
-  assert(currentCount == n_of_akind);
+  assert(kindIndex != -1);
   return kindIndex;
 }
 int number_of_a_kind_at_index(deck_t * hand, unsigned * match_counts, size_t match_idx)
@@ -173,7 +162,7 @@ int is_straight_at(deck_t * hand, size_t index, suit_t fs)
   int count = 1;
   int suit = 1;
   size_t n = min((hand->n_cards)-index, 5);
-  for(int i = index; i < n; ++i)
+  for(size_t i = index; i < n; ++i)
   {
     size_t offset = min(4, n-i);
     for(size_t j = i; j < i+offset; ++j)
