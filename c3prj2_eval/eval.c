@@ -212,6 +212,7 @@ int is_straight_at(deck_t * hand, size_t index, suit_t fs)
         if((*hand->cards[(hand->n_cards)-1]).value == VALUE_ACE)
         {
           return -1;
+        }
       }
     }
   }
