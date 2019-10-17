@@ -228,11 +228,11 @@ hand_eval_t build_hand_from_match(deck_t * hand, unsigned n, hand_ranking_t what
   {
     for(size_t i =0; i < hand->n_cards; ++i)
     {
-      if((*hand->cards[i]).value == (*hand->cards[idx]).value)
+      if(((*hand->cards[i]).value == (*hand->cards[idx]).value)&&((*hand->cards[i]).suit == (*hand->cards[idx]).suit))
       {
         for(size_t j = 0; j < n; ++j)
         {
-          ans.cards[j]value = hand->cards[i];
+          ans.cards[j] = hand->cards[i];
         }
       } else {
         for(size_t k = n; k < 5; ++k)
