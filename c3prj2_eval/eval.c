@@ -244,7 +244,7 @@ hand_eval_t build_hand_from_match(deck_t * hand, unsigned n, hand_ranking_t what
   } else {
       for(size_t i = 0; i < 5; ++i)
       {
-        ans.cards[i] = *hand->cards[i];
+        ans.cards[i] = hand->cards[i];
       }
   }
   return ans;
