@@ -238,20 +238,17 @@ hand_eval_t build_hand_from_match(deck_t * hand, unsigned n, hand_ranking_t what
   ans.ranking = what;
   if(n > 1)
     {
-      for(size_t i =0; i < hand->n_cards; ++i)
+      for(size_t i = idx; i < idx+n; ++i)
 	{
-	  if((hand->cards[i]->value == hand->cards[idx]->value)&&(hand->cards[i]->suit == hand->cards[idx]->suit))
+	  ans.cards[i-idx] = hand->cards[i];
+	}
+      for(size_t i = 0, j = n; (i < hand->n_cards) && (j < 5); ++i)
+	{
+	  if(hand->cards[i] != hand->cards[idx])
 	    {
-	      for(size_t j = 0; j < n; ++j)
-		{
-		  ans.cards[j] = hand->cards[i];
-		}
-	    } else {
-	    for(size_t k = n; k < 5; ++k)
-	      {
-		ans.cards[k] = hand->cards[i];
-	      }
-	  }
+	      ans.cards[j] = hand->cards[i];
+	      ++j;
+	    }
 	}
     } else {
     for(size_t i = 0; i < 5; ++i)
@@ -296,7 +293,6 @@ int compare_hands(deck_t * hand1, deck_t * hand2) {
 	    }
 	}
     }
-
   return 0;
 }
 //You will write this function in Course 4.
