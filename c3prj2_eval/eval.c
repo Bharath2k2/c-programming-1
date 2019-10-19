@@ -118,6 +118,8 @@ int is_straight_at(deck_t * hand, size_t index, suit_t fs)
   size_t origIndex = index;
   size_t n = hand->n_cards;
   if(n-index < 5) return 0;
+
+  if(fs != NUM_SUITS && hand->cards[index]->suit != fs ) return 0;
   if(hand->cards[index]->value == VALUE_ACE && hand->cards[n-1]->value == 2)
     {
       ++count;
