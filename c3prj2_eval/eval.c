@@ -96,7 +96,7 @@ int straight_helper(deck_t * hand, size_t index, suit_t fs, int suit, int count,
   unsigned value = hand->cards[index]->value;
   for(;index < n; ++index)
     {
-      if(hand->cards[index]->suit == fs)
+      if(hand->cards[index]->suit == fs && (hand->cards[index]->value == value || hand->cards[index]->value == (value + 1)))
 	{
 	  ++suit;
 	}
