@@ -105,9 +105,8 @@ int straight_helper(deck_t * hand, size_t index, suit_t fs, int suit, int count,
 	  ++count;
 	  --value;
 	}
-      if(count==5) break;
+      if(count == 5 && (fs == NUM_SUITS || suit == 5)) return 1;
     }
-  if(count == 5 && (fs == NUM_SUITS || suit == 5)) return 1;
   return 0;
 }
 
