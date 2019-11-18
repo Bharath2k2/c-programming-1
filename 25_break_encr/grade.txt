@@ -1,7 +1,7 @@
-Grading at Mon Nov 18 19:38:01 UTC 2019
+Grading at Mon Nov 18 22:48:04 UTC 2019
 Attempting to compile breaker.c 
-gcc -o breaker  breaker.c
-testcase1 passed
+make: 'breaker' is up to date.
+valgrind reported memory errors
 #################################################
 testcase2:
 valgrind reported memory errors or your program ran too long
