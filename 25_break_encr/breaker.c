@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <errno.h>
+#include <ctype.h>
 
 extern int errno;
 
@@ -41,10 +42,8 @@ int decypherKey(int * arr)
             return EXIT_FAILURE;
         }
     }
-    if (j >= ('e' - 'a')) key=j-('e'-'a') ;
-    else key=(26-('e'-'a'))+ j; 
-    return key
-
+    if (index >= ('e' - 'a')) key=index-('e'-'a') ;
+    else key=(26-('e'-'a'))+ index; 
     return key;
 }
 int main(int argc, char ** argv)
@@ -61,8 +60,8 @@ int main(int argc, char ** argv)
     {
         perror("Failed to open file");
     }
-
-    int key = decypherKey(f);
+    frequencyCount(encrypFile, alphArr);
+    int key = decypherKey(alphArr);
     printf("%d\n", key);
     if(fclose(encrypFile) != 0)
     {
