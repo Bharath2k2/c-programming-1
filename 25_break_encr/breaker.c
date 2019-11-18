@@ -48,8 +48,7 @@ int decypherKey(int * arr)
 }
 int main(int argc, char ** argv)
 {
-    int errnum;
-    int alphArr[26];
+    int alphArr[26] = {0};
     if(argc != 2)
     {
         fprintf(stderr,"Wrong Input format: Include 1 file name");
@@ -66,7 +65,5 @@ int main(int argc, char ** argv)
     if(fclose(encrypFile) != 0)
     {
         perror("failed to close file");
-    }
-    errnum = errno;
-    fprintf(stderr, "Value of errno: %d\n", errno);    
+    }  
 }
