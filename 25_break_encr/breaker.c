@@ -3,9 +3,8 @@
 #include <errno.h>
 #include <ctype.h>
 
-extern int errno;
 
-void frequencyCount(FILE * stream, int * arr)
+int decypherKey(FILE * stream, int * arr)
 {
     int ch;
     while((ch = fgetc(stream)) != EOF)
@@ -15,25 +14,16 @@ void frequencyCount(FILE * stream, int * arr)
             ++arr[tolower(ch) - 'a'];
         }
     }
-    return;
-}
-
-int highestIndex(int * arr)
-{
-    int valueIndex = 0;
+    int index = 0;
+    int max = 0;
     for(int i = 0; i < 25; ++i)
     {
-        if(arr[i] < arr[i+1])
+        if(arr[i] > max)
         {
-            valueIndex = i + 1;
+            index = i;
+            max = arr[i];
         }
     }
-    return valueIndex;
-}
-
-int decypherKey(int * arr)
-{
-    int index = highestIndex(arr);
     int count = 0;
     int key;
     if (index >= ('e' - 'a')) key=index-('e'-'a') ;
@@ -45,7 +35,7 @@ int main(int argc, char ** argv)
     int alphArr[26] = {0};
     if(argc != 2)
     {
-        fprintf(stderr,"Wrong Input format: Include 1 file name");
+        fprintf(stderr,"Wrong Input format: Include 1 file name\n");
         return EXIT_FAILURE;
     }
     FILE * encrypFile = fopen(argv[1],"r");
@@ -53,8 +43,7 @@ int main(int argc, char ** argv)
     {
         perror("Failed to open file");
     }
-    frequencyCount(encrypFile, alphArr);
-    int key = decypherKey(alphArr);
+    int key = decypherKey(encrypFile, alphArr);
     printf("%d\n", key);
     if(fclose(encrypFile) != 0)
     {
