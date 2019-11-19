@@ -35,13 +35,6 @@ int decypherKey(int * arr)
     int index = highestIndex(arr);
     int count = 0;
     int key;
-    for(int i = index + 1; i < 26; ++i)
-    {
-        if(arr[index] == arr[i])
-        {
-            return EXIT_FAILURE;
-        }
-    }
     if (index >= ('e' - 'a')) key=index-('e'-'a') ;
     else key=(26-('e'-'a'))+ index; 
     return key;
