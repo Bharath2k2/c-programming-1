@@ -1,15 +1,15 @@
-Grading at Tue Nov 19 01:14:22 UTC 2019
+Grading at Tue Nov 19 12:12:41 UTC 2019
 Attempting to compile breaker.c 
-make: 'breaker' is up to date.
-valgrind reported memory errors
+gcc -o breaker  breaker.c
+testcase1 passed
 #################################################
 testcase2:
-valgrind reported memory errors or your program ran too long
+testcase2 failed
 #################################################
 testcase3:
-valgrind reported memory errors or your program ran too long
+testcase3 failed
 #################################################
 testcase4:
-valgrind reported memory errors or your program ran too long
+testcase4 failed
 
 Overall Grade: F
