@@ -3,18 +3,6 @@
 #include <errno.h>
 #include <ctype.h>
 
-int highestIndex(int * arr)
-{
-    int valueIndex = 0;
-    for(int i = 0; i < 25; ++i)
-    {
-        if(arr[i] < arr[i+1])
-        {
-            valueIndex = i + 1;
-        }
-    }
-    return valueIndex;
-}
 
 int decypherKey(FILE * stream, int * arr)
 {
@@ -26,7 +14,16 @@ int decypherKey(FILE * stream, int * arr)
             ++arr[tolower(ch) - 'a'];
         }
     }
-    int index = highestIndex(arr);
+    int index = 0;
+    int max = 0;
+    for(int i = 0; i < 25; ++i)
+    {
+        if(arr[i] > max)
+        {
+            index = i;
+            max = arr[i];
+        }
+    }
     int count = 0;
     int key;
     if (index >= ('e' - 'a')) key=index-('e'-'a') ;
