@@ -1,2 +1,2 @@
 breaker: breaker.c
-	gcc -o breaker $(CFLAGS) breaker.c
+	gcc -o breaker  -ggdb3 $(CFLAGS) breaker.c
