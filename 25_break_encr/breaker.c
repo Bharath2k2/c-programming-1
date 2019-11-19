@@ -15,6 +15,7 @@ void frequencyCount(FILE * stream, int * arr)
             ++arr[tolower(ch) - 'a'];
         }
     }
+    return;
 }
 
 int highestIndex(int * arr)
