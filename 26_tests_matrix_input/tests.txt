@@ -1,5 +1,7 @@
 test0.txt
+test.tx
 test
+
 test1.txt test2.txt
 test3.txt
 test1.txt
