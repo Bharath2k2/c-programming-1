@@ -5,11 +5,11 @@
 void rotate(char matrix[10][10])
 {
   int N = 10;
-  for (int layer = 0; layer < N / 2; ++layer)
-    {
-      int maxValue = N-layer-1;
-      int minValue = layer;
-      for(int i = minValue; i < maxValue; ++i)
+	for (int layer = 0; layer < N / 2; ++layer)
+ 	{
+    int maxValue = N-layer-1;
+    int minValue = layer;
+    for(int i = minValue; i < maxValue; ++i)
 	{
 	  int offset = i - minValue;
 	  //temporary top value
@@ -24,5 +24,5 @@ void rotate(char matrix[10][10])
 	  matrix[minValue + offset][maxValue] = top;
 
 	}
-    }
+	}
 }
