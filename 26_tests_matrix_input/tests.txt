@@ -7,3 +7,4 @@ test3.txt
 test.tx
 2 test.txt
 test4.txt
+test6.txt
