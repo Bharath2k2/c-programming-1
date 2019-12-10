@@ -38,23 +38,22 @@ int checkInputFormat(char * a)
 }
 int checkFileContents(FILE * f)
 {
-    int c = 0;
-    int count = 0, line = 0;
-    while((c = fgetc(f)) != EOF)
+    int c;
+    int row = 0;
+    c = fgetc(f);
+    while(c != EOF)
     {
-        if(c != '\n' && isprint(c))
+        for(int i = 0; i < 10; ++i)
         {
-            ++count;
+            if(c=='\n') return 1;
+            if(!(isprint(c))) return 1;
+            c = fgetc(f);
         }
-        if(c == '\n')
-        {
-            ++line;
-        }
+        if(c != '\n') return 1;
+        ++row;
+        c = fgetc(f);
     }
-    if(count != 10 && line != 10)
-    {
-        return 0;
-    }
+    if(row == 10) return 0;
     return 1;
 }
 
