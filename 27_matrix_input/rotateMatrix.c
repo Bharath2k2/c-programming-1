@@ -38,23 +38,18 @@ int checkInputFormat(char * a)
 }
 int checkFileContents(FILE * f)
 {
-    int c;
-    int row = 0;
+    int c=0;
+    int rows = 0;
+    int chars = 0;
     c = fgetc(f);
     while(c != EOF)
     {
-        for(int i = 0; i < 10; ++i)
-        {
-            if(c=='\n') return 1;
-            if(!(isprint(c))) return 1;
-            c = fgetc(f);
-        }
-        if(c != '\n') return 1;
-        ++row;
+        if(c != '\n' && isprint(c)) ++chars;
+        if(c == '\n') ++rows;
         c = fgetc(f);
     }
-    if(row == 10) return 0;
-    return 1;
+    if(rows == 10 && chars ==100) return 1;
+    return 0;
 }
 
 int main(int argc, char * argv[])
@@ -104,7 +99,7 @@ int main(int argc, char * argv[])
     }
     if(fclose(f) != 0)
     {
-        perror("File not closed");
+        perror("File did not close");
         return EXIT_FAILURE;
     }
     return EXIT_SUCCESS;
