@@ -38,12 +38,13 @@ int checkInputFormat(char * a)
 }
 int checkFileContents(FILE * f)
 {
-    int c=0;
+    int c;
     int rows = 0;
     int chars = 0;
     c = fgetc(f);
     while(c != EOF)
     {
+        if(c == 0xFF) continue;
         if(c != '\n' && isprint(c)) ++chars;
         if(c == '\n') ++rows;
         c = fgetc(f);
