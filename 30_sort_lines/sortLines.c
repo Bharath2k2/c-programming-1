@@ -43,8 +43,7 @@ int main(int argc, char ** argv) {
     }
     free(array);
     return EXIT_SUCCESS;
-  } else (argc > 1)
-  {
+  } else {
     for(int k = 0; k < argc; ++k)
     {
       FILE * file = fopen(argv[k],"r");
