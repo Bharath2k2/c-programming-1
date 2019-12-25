@@ -1,13 +1,18 @@
-Grading at Wed Dec 25 00:19:31 UTC 2019
+Grading at Wed Dec 25 00:22:39 UTC 2019
 Attempting to compile sortLines.c
-sortLines.c: In function ‘main’:
-sortLines.c:46:10: error: statement with no effect [-Werror=unused-value]
-   } else (argc > 1)
-          ^
-sortLines.c:47:3: error: expected ‘;’ before ‘{’ token
-   {
-   ^
-cc1: all warnings being treated as errors
-The code did not compile!
+#################################################
+testcase1:
+testcase1 failed, your program didn't indicate this is a failure case
+#################################################
+testcase2:
+Your output is correct
+  - Valgrind was clean (no errors, no memory leaks)
+valgrind was clean
+#################################################
+testcase3:
+Your output is incorrect
+#################################################
+testcase4:
+Your output is incorrect
 
 Overall Grade: F
