@@ -49,14 +49,14 @@ int main(int argc, char ** argv) {
   {
     for(int k = 0; k < argc; ++k)
     {
-      FILE * file = fopen(argv[k],"r+");
+      FILE * file = fopen(argv[k],"r");
       char * line = NULL;
       char ** array = NULL;
       size_t size = 0;
       if(file == NULL)
       {
         printf("File %s does not exist or can not be opened\n", argv[k]);
-        continue;
+        return EXIT_FAILURE;
       }
       if(file != NULL)
       {
