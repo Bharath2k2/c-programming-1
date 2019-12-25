@@ -23,8 +23,7 @@ int main(int argc, char ** argv) {
   {
     perror("invalid input, executable not specified");
     return EXIT_FAILURE;
-  }
-  if(argc == 1)
+  } else if(argc == 1)
   {
     char ** array = NULL;
     char * line = NULL;
@@ -44,8 +43,7 @@ int main(int argc, char ** argv) {
     }
     free(array);
     return EXIT_SUCCESS;
-  }
-  if(argc > 1)
+  } else (argc > 1)
   {
     for(int k = 0; k < argc; ++k)
     {
@@ -64,7 +62,7 @@ int main(int argc, char ** argv) {
         size_t fileSize = ftell(file);
         if (fileSize == 0) {
             printf("File %s is empty\n",argv[k]);
-            continue;
+            return EXIT_FAILURE;
         }
         rewind(file);
         size_t i = 0;
