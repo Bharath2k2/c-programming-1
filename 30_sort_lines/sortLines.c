@@ -16,78 +16,68 @@ void sortData(char ** data, size_t count) {
   qsort(data, count, sizeof(char *), stringOrder);
 }
 
-int main(int argc, char ** argv) {
-  
-  //WRITE YOUR CODE HERE!
-  if(argc == 0)
+int main(int argc, char ** argv)
+{
+  if (argc == 0) 
   {
-    perror("invalid input, executable not specified");
+    fprintf(stderr,"not enough arguments \n");
     return EXIT_FAILURE;
-  } else if(argc == 1)
-  {
-    char ** array = NULL;
-    char * line = NULL;
+  }
+  else if (argc == 1) {
+    //read from stdio
+    char** array = NULL;
+    char* line = NULL;
     size_t size = 0;
-    size_t i = 0;
-    while(getline(&line, &size,stdin) >= 0)
+    size_t i = 0; 
+    while(getline(&line , &size, stdin)>=0)
     {
-      array = realloc(array, ((i+1)*sizeof(*array)));
-      array[i] = line;
-      line = NULL;
+      array = realloc(array, (i+1)*sizeof(*array));
+      array[i]=line;
+      line=NULL;
       ++i;
     }
+    free(line);
+    sortData(array, i);
     for(size_t j = 0; j < i; ++j)
     {
-      printf("%s",array[j]);
+      printf("%s", array[j]);
       free(array[j]);
     }
     free(array);
-    return EXIT_SUCCESS;
   } else {
-    for(int k = 0; k < argc; ++k)
+    for(size_t k=1; k<argc; ++k)
     {
-      FILE * file = fopen(argv[k],"r");
-      char * line = NULL;
-      char ** array = NULL;
-      size_t size = 0;
-      if(file == NULL)
+      char** array=NULL;
+      char* line=NULL;
+      size_t size=0;
+      size_t i =0; 
+      FILE * f=fopen(argv[k],"r");
+      if (f == NULL)
       {
-        printf("File %s does not exist or can not be opened\n", argv[k]);
+        perror("Could not open file");
         return EXIT_FAILURE;
       }
-      if(file != NULL)
+      while(getline(&line, &size, f) >= 0)
       {
-        fseek (file, 0, SEEK_END);
-        size_t fileSize = ftell(file);
-        if (fileSize == 0) {
-            printf("File %s is empty\n",argv[k]);
-            return EXIT_FAILURE;
-        }
-        rewind(file);
-        size_t i = 0;
-        while(getline(&line,&size,file) >= 0)
-        {
-          array = realloc(array, ((i+1)*sizeof(*array)));
-          array[i] = line;
-          line = NULL;
-          ++i;
-        }
-        free(line);
-        sortData(array,i);
-        for(size_t j = 0; j < i; ++j)
-        {
-          printf("%s",array[j]);
-          free(array[j]);
-        }
-        free(array);
-        if(fclose(file) != 0)
-        {
-          perror("Failed to close file");
-          return EXIT_FAILURE;
-        }
+        array=realloc(array,(i+1)*sizeof(*array));
+        array[i]=line;
+        line=NULL;
+        ++i;
       }
-    }
+      free(line);
+      sortData(array, i);
+      for(size_t j = 0; j < i; ++j)
+      {
+        printf("%s", array[j]);
+        free(array[j]);
+      }
+      free(array);
+      if (fclose(f) != 0) 
+      {
+	      perror("Failed to close the input file!");
+	      return EXIT_FAILURE;
+      } 
+    } 
   }
   return EXIT_SUCCESS;
 }
-
