@@ -122,9 +122,9 @@ int countMines(board_t * b, int x, int y)
   int count = 0;
   int maxY = mini(y + 1, b->height-1);
   int maxX = mini(x + 1, b->width-1);
-  for(int i = maxi(y - 1, 0); i < maxY; ++i)
+  for(int i = maxi(y - 1, 0); i <= maxY; ++i)
   {
-    for(int j = maxi(x - 1, 0); j < maxX; ++j)
+    for(int j = maxi(x - 1, 0); j <= maxX; ++j)
     {
       if(IS_MINE(b->board[i][j]) && !(i == y && j == x)) ++count;
     }
