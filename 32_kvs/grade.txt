@@ -1,10 +1,15 @@
-Grading at Wed Jan  1 18:31:19 UTC 2020
+Grading at Wed Jan  1 18:33:02 UTC 2020
 Attempting to compile:
-kv.c: In function ‘lookupValue’:
-kv.c:70:10: error: unused variable ‘out’ [-Werror=unused-variable]
-   char * out;
-          ^
-cc1: all warnings being treated as errors
-The code did not compile!
+#################################################
+testcase1:
+Your output is incorrect
+#################################################
+testcase2:
+Your output is incorrect
+#################################################
+testcase3:
+Your output is correct
+  - Valgrind was clean (no errors, no memory leaks)
+valgrind was clean
 
 Overall Grade: F
