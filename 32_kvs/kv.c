@@ -8,7 +8,7 @@ kvpair_t * findKVs(char * line)
   char * pointer = strchr(line, '=');
   *pointer = '\0';
   ++pointer;
-  kvpair_t * kv_out = malloc(sizeof(kvarray_t));
+  kvpair_t * kv_out = malloc((size_t)sizeof(kvarray_t));
   kv_out->key = line;
   kv_out->value = pointer;
   return kv_out;
@@ -29,7 +29,7 @@ kvarray_t * readKVs(const char * fname)
   size_t sz = 0;
   while(getline(&line, &sz, file) >= 0)
   {
-    p->arr = realloc(p->arr, ((p->num) + 1)*sizeof(line));
+    p->arr = realloc(p->arr, ((p->num) + 1) * sizeof(*p->arr));
     p->arr[p->num] = findKVs(line);
     p->num++;
     line = NULL;
