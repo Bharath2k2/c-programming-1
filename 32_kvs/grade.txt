@@ -1,15 +1,19 @@
-Grading at Wed Jan  1 18:33:02 UTC 2020
+Grading at Wed Jan  1 18:37:45 UTC 2020
 Attempting to compile:
 #################################################
 testcase1:
-Your output is incorrect
+Your output is correct
+  - Valgrind was clean (no errors, no memory leaks)
+valgrind was clean
 #################################################
 testcase2:
-Your output is incorrect
+Your output is correct
+  - Valgrind was clean (no errors, no memory leaks)
+valgrind was clean
 #################################################
 testcase3:
 Your output is correct
   - Valgrind was clean (no errors, no memory leaks)
 valgrind was clean
 
-Overall Grade: F
+Overall Grade: A
