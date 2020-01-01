@@ -25,6 +25,7 @@ kvarray_t * readKVs(const char * fname)
   }
   kvarray_t * p = malloc((size_t)sizeof(kvarray_t));
   p->num = 0;
+  p->arr = NULL;
   char * line = NULL;
   size_t sz = 0;
   while(getline(&line, &sz, file) >= 0)
