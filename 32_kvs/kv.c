@@ -8,6 +8,8 @@ kvpair_t * findKVs(char * line)
   char * pointer = strchr(line, '=');
   *pointer = '\0';
   ++pointer;
+  char * newline = strchr(pointer, '\n');
+  *newline = '\0';
   kvpair_t * kv_out = malloc((size_t)sizeof(kvarray_t));
   kv_out->key = line;
   kv_out->value = pointer;
