@@ -48,7 +48,7 @@ int main(int argc, char ** argv) {
   }
  //read the key/value pairs from the file named by argv[1] (call the result kv)
   kvarray_t * kv = NULL;
-  kv = radKVs(argv[1]);
+  kv = readKVs(argv[1]);
  //count from 2 to argc (call the number you count i)
   for(int i = 2; i < argc; ++i)
   {
@@ -65,7 +65,7 @@ int main(int argc, char ** argv) {
     //open the file named by outName (call that f)
     FILE * f = fopen(outname, "w");
     //print the counts from c into the FILE f
-    printcounts(c, f);
+    printCounts(c, f);
     //close f
     if(fclose(f) != 0)
     {
