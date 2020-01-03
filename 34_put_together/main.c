@@ -13,7 +13,7 @@ counts_t * countFile(const char * filename, kvarray_t * kvPairs) {
   char * line = NULL;
   size_t size = 0;
   char * newline = NULL;
-  while(getline(&line, &size, f))
+  while(getline(&line, &size, f) >= 0)
   {
     if((newline = strchr(line, '\n')) != NULL) *newline = '\0';
     newline = lookupValue(kvPairs, line);
