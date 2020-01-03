@@ -19,7 +19,7 @@ void allocateNewCount(counts_t * c, const char * name)
   c->arr[c->size] = NULL;
   c->arr[c->size] = malloc(sizeof(one_count_t));
   c->arr[c->size]->count = NULL;
-  c->arr[c->size]->count = malloc(sizeof(name)+4);
+  c->arr[c->size]->count = malloc(strlen(name)+8);
   c->arr[c->size]->num = 1;
   strcpy(c->arr[c->size]->count, name);
   ++c->size;
