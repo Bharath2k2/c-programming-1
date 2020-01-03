@@ -21,7 +21,7 @@ void allocateNewCount(counts_t * c, const char * name)
   c->arr[c->size]->count = NULL;
   c->arr[c->size]->count = malloc(sizeof(name));
   c->arr[c->size]->num = 1;
-  strcpy(c->arr[c->size]->count, name);
+  c->arr[c->size]->count = name;
   ++c->size;
 }
 
