@@ -38,14 +38,6 @@ int main(int argc, char ** argv) {
     perror("not enough arguments");
     return EXIT_FAILURE;
   }
-  for(int i = 1; i < argc; ++i)
-  {
-    if(!(checkInputFormat(argv[i])))
-    {
-      perror("invalid input type");
-      return EXIT_FAILURE;
-    }
-  }
  //read the key/value pairs from the file named by argv[1] (call the result kv)
   kvarray_t * kv = NULL;
   kv = readKVs(argv[1]);
