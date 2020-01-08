@@ -208,7 +208,7 @@ int compare_hands(deck_t * hand1, deck_t * hand2) {
         }
       }
     }
-    
+  }
   return 0;
 }
 
