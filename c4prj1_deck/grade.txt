@@ -1,26 +1,51 @@
-Grading at Wed Jan  8 02:24:44 UTC 2020
+Grading at Wed Jan  8 02:29:10 UTC 2020
 Compiling deck.c -> deck.o
 Compiling eval.c -> eval.o
-eval.c: In function ‘compare_hands’:
-eval.c:218:1: error: ISO C forbids nested functions [-Werror=pedantic]
- unsigned * get_match_counts(deck_t * hand)
- ^
-eval.c:249:1: error: ISO C forbids nested functions [-Werror=pedantic]
- void copy_straight(card_t ** to, deck_t *from, size_t ind, suit_t fs, size_t count)
- ^
-eval.c:275:1: error: ISO C forbids nested functions [-Werror=pedantic]
- int find_straight(deck_t * hand, suit_t fs, hand_eval_t * ans) {
- ^
-eval.c:305:1: error: ISO C forbids nested functions [-Werror=pedantic]
- hand_eval_t evaluate_hand(deck_t * hand) {
- ^
-eval.c:371:1: error: expected declaration or statement at end of input
- }
- ^
-eval.c:371:1: error: control reaches end of non-void function [-Werror=return-type]
- }
- ^
-cc1: all warnings being treated as errors
-Compilation of eval.c failed
+Compiling cards.c -> cards.o
+Linking eval.o, deck.o, cards.o, and our tester
+deck.o: In function `assert_card_valid':
+deck.c:(.text+0x0): multiple definition of `assert_card_valid'
+eval.o:eval.c:(.text+0x0): first defined here
+deck.o: In function `ranking_to_string':
+deck.c:(.text+0x40): multiple definition of `ranking_to_string'
+eval.o:eval.c:(.text+0x40): first defined here
+deck.o: In function `value_letter':
+deck.c:(.text+0xa0): multiple definition of `value_letter'
+eval.o:eval.c:(.text+0xa0): first defined here
+deck.o: In function `suit_letter':
+deck.c:(.text+0x101): multiple definition of `suit_letter'
+eval.o:eval.c:(.text+0x101): first defined here
+deck.o: In function `print_card':
+deck.c:(.text+0x145): multiple definition of `print_card'
+eval.o:eval.c:(.text+0x145): first defined here
+deck.o: In function `card_from_letters':
+deck.c:(.text+0x18b): multiple definition of `card_from_letters'
+eval.o:eval.c:(.text+0x18b): first defined here
+deck.o: In function `card_from_num':
+deck.c:(.text+0x24d): multiple definition of `card_from_num'
+eval.o:eval.c:(.text+0x24d): first defined here
+cards.o: In function `assert_card_valid':
+cards.c:(.text+0x0): multiple definition of `assert_card_valid'
+eval.o:eval.c:(.text+0x0): first defined here
+cards.o: In function `ranking_to_string':
+cards.c:(.text+0x40): multiple definition of `ranking_to_string'
+eval.o:eval.c:(.text+0x40): first defined here
+cards.o: In function `value_letter':
+cards.c:(.text+0xa0): multiple definition of `value_letter'
+eval.o:eval.c:(.text+0xa0): first defined here
+cards.o: In function `suit_letter':
+cards.c:(.text+0x101): multiple definition of `suit_letter'
+eval.o:eval.c:(.text+0x101): first defined here
+cards.o: In function `print_card':
+cards.c:(.text+0x145): multiple definition of `print_card'
+eval.o:eval.c:(.text+0x145): first defined here
+cards.o: In function `card_from_letters':
+cards.c:(.text+0x18b): multiple definition of `card_from_letters'
+eval.o:eval.c:(.text+0x18b): first defined here
+cards.o: In function `card_from_num':
+cards.c:(.text+0x24d): multiple definition of `card_from_num'
+eval.o:eval.c:(.text+0x24d): first defined here
+collect2: error: ld returned 1 exit status
+Linking failed
 
 Overall Grade: F
