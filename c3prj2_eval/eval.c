@@ -173,7 +173,6 @@ hand_eval_t build_hand_from_match(deck_t * hand, unsigned n, hand_ranking_t what
   return ans;
 }
 
-
 int compare_hands(deck_t * hand1, deck_t * hand2) {
   size_t size = sizeof(card_t);
   void * base1 = (void*) hand1->cards;
@@ -216,7 +215,27 @@ int compare_hands(deck_t * hand1, deck_t * hand2) {
 //implementation in eval-c4.o) so that the
 //other functions we have provided can make
 //use of get_match_counts.
-unsigned * get_match_counts(deck_t * hand) ;
+unsigned * get_match_counts(deck_t * hand)
+{
+  size_t size = sizeof(card_t);
+  unsigned * arr = malloc(hand->n_cards * sizeof(*arr));
+  void * base1 = (void*) hand->cards;
+  qsort(base1, hand->n_cards, size, card_ptr_comp);
+  unsigned count = 1;
+  size_t idx = 0;
+  for(size_t i = 1; i < hand->n_cards; ++i)
+  {
+    if(hand->cards[i-1]->value == hand->cards[i]->value)
+    {
+      ++count;
+    } else {
+      arr[idx] = count;
+      count = 1;
+      ++idx;
+    }
+  }
+  return arr;
+}
 
 // We provide the below functions.  You do NOT need to modify them
 // In fact, you should not modify them!
