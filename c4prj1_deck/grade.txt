@@ -1,23 +1,11 @@
-Grading at Wed Jan  8 23:07:12 UTC 2020
+Grading at Wed Jan  8 23:09:08 UTC 2020
 Compiling deck.c -> deck.o
 Compiling eval.c -> eval.o
 eval.c: In function ‘get_match_counts’:
-eval.c:231:22: error: expected ‘,’ or ‘;’ before ‘j’
-     for(size_t j = 0 j < hand->n_cards; ++j)
-                      ^
-eval.c:231:44: error: expected ‘;’ before ‘)’ token
-     for(size_t j = 0 j < hand->n_cards; ++j)
-                                            ^
-eval.c:233:39: error: ‘hands’ undeclared (first use in this function)
-       if((valuesEqual(hand->cards[i], hands->cards[j])) ++count;
-                                       ^
-eval.c:233:39: note: each undeclared identifier is reported only once for each function it appears in
-eval.c:233:59: error: expected ‘)’ before ‘count’
-       if((valuesEqual(hand->cards[i], hands->cards[j])) ++count;
-                                                           ^
-eval.c:234:5: error: expected expression before ‘}’ token
-     }
-     ^
+eval.c:233:38: error: ‘hands’ undeclared (first use in this function)
+       if(valuesEqual(hand->cards[i], hands->cards[j])) ++count;
+                                      ^
+eval.c:233:38: note: each undeclared identifier is reported only once for each function it appears in
 Compilation of eval.c failed
 
 Overall Grade: F
