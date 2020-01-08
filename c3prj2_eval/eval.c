@@ -182,34 +182,36 @@ int compare_hands(deck_t * hand1, deck_t * hand2) {
   hand_eval_t h1 = evaluate_hand(hand1);
   hand_eval_t h2 = evaluate_hand(hand2);
   if(h1.ranking != h2.ranking)
+  {
+    if(h1.ranking < h2.ranking)
     {
-      if(h1.ranking < h2.ranking)
-	{
-	  return 1;
-	}
-      if(h1.ranking > h2.ranking)
-	{
-	  return -1;
-	}
+      return 1;
     }
+    if(h1.ranking > h2.ranking)
+    {
+      return -1;
+    }
+  }
   if(h1.ranking == h2.ranking)
   {
     for(size_t i = 0; i < 5; ++i)
     {
       for(size_t i = 0; i < 5; ++i)
-	{
-	  if((*h1.cards[i]).value > (*h2.cards[i]).value)
-	    {
-	      return 1;
-	    }
-	  if((*h1.cards[i]).value < (*h2.cards[i]).value)
-	    {
-	      return -1;
-	    }
-	}
+      {
+        if((*h1.cards[i]).value > (*h2.cards[i]).value)
+        {
+          return 1;
+        }
+        if((*h1.cards[i]).value < (*h2.cards[i]).value)
+        {
+          return -1;
+        }
+      }
     }
+  }
   return 0;
 }
+
 //You will write this function in Course 4.
 //For now, we leave a prototype (and provide our
 //implementation in eval-c4.o) so that the
