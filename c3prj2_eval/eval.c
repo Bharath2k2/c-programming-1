@@ -228,9 +228,9 @@ unsigned * get_match_counts(deck_t * hand)
   for(size_t i = 0; i < hand->n_cards-1; ++i)
   {
     unsigned count = 0;
-    for(size_t j = 0 j < hand->n_cards; ++j)
+    for(size_t j = 0; j < hand->n_cards; ++j)
     {
-      if((valuesEqual(hand->cards[i], hands->cards[j])) ++count;
+      if(valuesEqual(hand->cards[i], hands->cards[j])) ++count;
     }
     arr[i] = count;
   }
