@@ -230,7 +230,7 @@ unsigned * get_match_counts(deck_t * hand)
     unsigned count = 0;
     for(size_t j = 0; j < hand->n_cards; ++j)
     {
-      if(valuesEqual(hand->cards[i], hands->cards[j])) ++count;
+      if(valuesEqual(hand->cards[i], hand->cards[j])) ++count;
     }
     arr[i] = count;
   }
