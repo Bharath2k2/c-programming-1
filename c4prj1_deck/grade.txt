@@ -1,75 +1,26 @@
-Grading at Wed Jan  8 01:10:52 UTC 2020
+Grading at Wed Jan  8 02:24:44 UTC 2020
 Compiling deck.c -> deck.o
-In file included from deck.c:4:0:
-deck.h:11:9: error: expected ‘;’, identifier or ‘(’ before ‘struct’
- typedef struct deck_tag deck_t;
-         ^
-deck.h:14:17: error: expected declaration specifiers or ‘...’ before ‘deck_t’
- void print_hand(deck_t * hand);
-                 ^
-deck.h:15:19: error: expected declaration specifiers or ‘...’ before ‘deck_t’
- int deck_contains(deck_t * d, card_t c) ;
-                   ^
-deck.h:16:14: error: expected declaration specifiers or ‘...’ before ‘deck_t’
- void shuffle(deck_t * d);
-              ^
-deck.h:17:23: error: expected declaration specifiers or ‘...’ before ‘deck_t’
- void assert_full_deck(deck_t * d) ;
-                       ^
-deck.h:19:1: error: unknown type name ‘deck_t’
- deck_t * make_deck_exclude(deck_t * excluded_cards);
+Compiling eval.c -> eval.o
+eval.c: In function ‘compare_hands’:
+eval.c:218:1: error: ISO C forbids nested functions [-Werror=pedantic]
+ unsigned * get_match_counts(deck_t * hand)
  ^
-deck.h:19:28: error: expected declaration specifiers or ‘...’ before ‘deck_t’
- deck_t * make_deck_exclude(deck_t * excluded_cards);
-                            ^
-deck.h:20:18: error: expected declaration specifiers or ‘...’ before ‘deck_t’
- void add_card_to(deck_t * deck, card_t c);
-                  ^
-deck.h:21:25: error: expected declaration specifiers or ‘...’ before ‘deck_t’
- card_t * add_empty_card(deck_t * deck);
-                         ^
-deck.h:22:16: error: expected declaration specifiers or ‘...’ before ‘deck_t’
- void free_deck(deck_t * deck) ;
-                ^
-deck.h:23:1: error: unknown type name ‘deck_t’
- deck_t * build_remaining_deck(deck_t ** hands, size_t n_hands) ;
+eval.c:249:1: error: ISO C forbids nested functions [-Werror=pedantic]
+ void copy_straight(card_t ** to, deck_t *from, size_t ind, suit_t fs, size_t count)
  ^
-deck.h:23:31: error: expected declaration specifiers or ‘...’ before ‘deck_t’
- deck_t * build_remaining_deck(deck_t ** hands, size_t n_hands) ;
-                               ^
-deck.c:8:17: error: expected declaration specifiers or ‘...’ before ‘deck_t’
- void print_hand(deck_t * hand)
-                 ^
-deck.c:17:19: error: expected declaration specifiers or ‘...’ before ‘deck_t’
- int deck_contains(deck_t * d, card_t c)
-                   ^
-deck.c:29:14: error: expected declaration specifiers or ‘...’ before ‘deck_t’
- void shuffle(deck_t * d)
-              ^
-deck.c:42:23: error: expected declaration specifiers or ‘...’ before ‘deck_t’
- void assert_full_deck(deck_t * d)
-                       ^
-deck.c:56:18: error: expected declaration specifiers or ‘...’ before ‘deck_t’
- void add_card_to(deck_t * deck, card_t c)
-                  ^
-deck.c:66:25: error: expected declaration specifiers or ‘...’ before ‘deck_t’
- card_t * add_empty_card(deck_t * deck)
-                         ^
-deck.c:75:1: error: unknown type name ‘deck_t’
- deck_t * make_deck_exclude(deck_t * excluded_cards)
+eval.c:275:1: error: ISO C forbids nested functions [-Werror=pedantic]
+ int find_straight(deck_t * hand, suit_t fs, hand_eval_t * ans) {
  ^
-deck.c:75:28: error: expected declaration specifiers or ‘...’ before ‘deck_t’
- deck_t * make_deck_exclude(deck_t * excluded_cards)
-                            ^
-deck.c:90:1: error: unknown type name ‘deck_t’
- deck_t * build_remaining_deck(deck_t ** hands, size_t n_hands)
+eval.c:305:1: error: ISO C forbids nested functions [-Werror=pedantic]
+ hand_eval_t evaluate_hand(deck_t * hand) {
  ^
-deck.c:90:31: error: expected declaration specifiers or ‘...’ before ‘deck_t’
- deck_t * build_remaining_deck(deck_t ** hands, size_t n_hands)
-                               ^
-deck.c:106:16: error: expected declaration specifiers or ‘...’ before ‘deck_t’
- void free_deck(deck_t * deck)
-                ^
-Compilation of deck.c failed
+eval.c:371:1: error: expected declaration or statement at end of input
+ }
+ ^
+eval.c:371:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+Compilation of eval.c failed
 
 Overall Grade: F
