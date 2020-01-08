@@ -65,19 +65,18 @@ void add_card_to(deck_t * deck, card_t c)
 
 card_t * add_empty_card(deck_t * deck)
 {
-  card_t c;
-  c.value = 0;
-  c.suit = 0;
-  add_card_to(deck, c);
+  card_t * c = malloc(sizeof(*c));
+  c->value = 0;
+  c->suit = 0;
+  add_card_to(deck, *c);
   return deck->cards[deck->n_cards - 1];
 }
 
 deck_t * make_deck_exclude(deck_t * excluded_cards)
 {
-  size_t length = 52 - excluded_cards->n_cards;
   deck_t * d = malloc(sizeof(*d));
   d->n_cards = length;
-  d->cards = malloc(length * sizeof(*d->cards));
+  d->cards = malloc(excluded_cards->n_cards * sizeof(*d->cards));
   card_t c;
   for(size_t i = 0; i < 52; ++i)
   {
