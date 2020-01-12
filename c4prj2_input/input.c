@@ -39,7 +39,7 @@ deck_t * hand_from_string(const char * lineptr, future_cards_t * fc)
         }
         *card = card_from_letters(lineptr[i], lineptr[i+1]);
         assert_card_valid(*card);
-        add_card_to(deck, card);
+        add_card_to(deck, *card);
     }
     free(card);
     free(index);
@@ -53,7 +53,7 @@ deck_t * hand_from_string(const char * lineptr, future_cards_t * fc)
 
 deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc)
 {
-    const char * lineptr  = NULL;
+    char * lineptr  = NULL;
     size_t n  = 0;
     deck_t ** decks = NULL;
     if(*n_hands != 0) *n_hands = 0; 
