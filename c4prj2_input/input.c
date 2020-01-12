@@ -27,7 +27,7 @@ deck_t * hand_from_string(const char * lineptr, future_cards_t * fc)
                     index[j] = '\0';
                 }
             }
-            *card = add_empty_card(deck);
+            card = add_empty_card(deck);
             assert_card_valid(*card);
             add_future_card(fc,(size_t)atoi(index), add_empty_card(deck));
             ++i;
@@ -37,7 +37,7 @@ deck_t * hand_from_string(const char * lineptr, future_cards_t * fc)
             perror("invalid card value, please provide valid card");
             return NULL;
         }
-        card = card_from_letters(lineptr[i], lineptr[i+1]);
+        *card = card_from_letters(lineptr[i], lineptr[i+1]);
         assert_card_valid(*card);
         add_card_to(deck, card);
     }
