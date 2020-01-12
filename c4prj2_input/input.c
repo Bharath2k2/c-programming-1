@@ -65,7 +65,7 @@ deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc)
     {
         decks = realloc(decks, (count + 1) * sizeof(*decks));
         deck = hand_from_string(lineptr, fc);
-        if(hand_from_string == NULL) continue;
+        if(deck == NULL) continue;
         decks[count] = deck;
         ++i;
         ++count;
