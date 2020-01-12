@@ -32,15 +32,16 @@ deck_t * hand_from_string(const char * lineptr, future_cards_t * fc)
             assert_card_valid(*card);
             add_future_card(fc,(size_t)atoi(index), add_empty_card(deck));
             ++i;
-        }
-        if(lineptr[i+1] == '\n' || lineptr[i+1] == '\0' || lineptr[i+1] == ' ' || lineptr[i+1] == EOF)
-        {
+        }  else {
+            if(lineptr[i+1] == '\n' || lineptr[i+1] == '\0' || lineptr[i+1] == ' ' || lineptr[i+1] == EOF)
+            {
             perror("invalid card value, please provide valid card");
             return NULL;
+            }
+            *card = card_from_letters(lineptr[i], lineptr[i+1]);
+            assert_card_valid(*card);
+            add_card_to(deck, *card);
         }
-        *card = card_from_letters(lineptr[i], lineptr[i+1]);
-        assert_card_valid(*card);
-        add_card_to(deck, *card);
     }
     free(card);
     free(index);
