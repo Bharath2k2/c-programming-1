@@ -1,11 +1,11 @@
-Grading at Sun Jan 12 02:28:49 UTC 2020
+Grading at Sun Jan 12 02:31:18 UTC 2020
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
 input.c: In function ‘hand_from_string’:
-input.c:20:43: error: expected ‘)’ before ‘sizeof’
-             index = malloc(strlen(lineptr)sizeof(*index));
-                                           ^
+input.c:30:19: error: incompatible types when assigning to type ‘card_t {aka struct card_tag}’ from type ‘card_t * {aka struct card_tag *}’
+             *card = add_empty_card(deck);
+                   ^
 input.c:40:14: error: incompatible types when assigning to type ‘card_t * {aka struct card_tag *}’ from type ‘card_t {aka struct card_tag}’
          card = card_from_letters(lineptr[i], lineptr[i+1]);
               ^
