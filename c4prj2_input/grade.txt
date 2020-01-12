@@ -1,21 +1,15 @@
-Grading at Sun Jan 12 02:04:39 UTC 2020
+Grading at Sun Jan 12 02:28:49 UTC 2020
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
 input.c: In function ‘hand_from_string’:
-input.c:20:19: error: assignment makes pointer from integer without a cast [-Werror=int-conversion]
-             index = lineptr[i];
-                   ^
-input.c:23:49: error: comparison between pointer and integer [-Werror]
-                 if(lineptr[i] == ' ' || lineptr == '\n')
-                                                 ^
-input.c:25:32: error: assignment of read-only location ‘*(lineptr + (sizetype)(i * 1ul))’
-                     lineptr[i] = '\0';
-                                ^
-input.c:37:14: error: incompatible types when assigning to type ‘card_t * {aka struct card_tag *}’ from type ‘card_t {aka struct card_tag}’
+input.c:20:43: error: expected ‘)’ before ‘sizeof’
+             index = malloc(strlen(lineptr)sizeof(*index));
+                                           ^
+input.c:40:14: error: incompatible types when assigning to type ‘card_t * {aka struct card_tag *}’ from type ‘card_t {aka struct card_tag}’
          card = card_from_letters(lineptr[i], lineptr[i+1]);
               ^
-input.c:39:27: error: incompatible type for argument 2 of ‘add_card_to’
+input.c:42:27: error: incompatible type for argument 2 of ‘add_card_to’
          add_card_to(deck, card);
                            ^
 In file included from input.h:4:0,
@@ -24,14 +18,14 @@ deck.h:17:6: note: expected ‘card_t {aka struct card_tag}’ but argument is o
  void add_card_to(deck_t * deck, card_t c);
       ^
 input.c: In function ‘read_input’:
-input.c:57:20: error: passing argument 1 of ‘getline’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+input.c:61:20: error: passing argument 1 of ‘getline’ from incompatible pointer type [-Werror=incompatible-pointer-types]
      while (getline(&lineptr, &n, f) >= 0)
                     ^
 In file included from input.c:1:0:
 /usr/include/stdio.h:678:20: note: expected ‘char ** restrict’ but argument is of type ‘const char **’
  extern _IO_ssize_t getline (char **__restrict __lineptr,
                     ^
-input.c:64:10: error: passing argument 1 of ‘free’ discards ‘const’ qualifier from pointer target type [-Werror=discarded-qualifiers]
+input.c:68:10: error: passing argument 1 of ‘free’ discards ‘const’ qualifier from pointer target type [-Werror=discarded-qualifiers]
      free(lineptr);
           ^
 In file included from input.c:2:0:
