@@ -17,7 +17,7 @@ deck_t * hand_from_string(const char * lineptr, future_cards_t * fc)
         if(i == '?')
         {
             ++i;
-            index = malloc(strlen(lineptr) * sizeof(*index));
+            index = malloc((strlen(lineptr) + 2) * sizeof(*index));
             strcpy(index, &lineptr[i]);
             size_t j = 0;
             while(index[j] != '\0')
