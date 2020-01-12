@@ -17,17 +17,20 @@ deck_t * hand_from_string(const char * lineptr, future_cards_t * fc)
         if(i == '?')
         {
             ++i;
-            index = lineptr[i];
-            while(lineptr[i] != '\0')
+            index = malloc(strlen(lineptr)sizeof(*index));
+            strcpy(index, &lineptr[i]);
+            size_t j = 0;
+            while(index[j] != '\0')
             {
-                if(lineptr[i] == ' ' || lineptr == '\n')
+                if(index[j] == ' ' || index[j] == '\n')
                 {
-                    lineptr[i] = '\0';
+                    index[j] = '\0';
                 }
             }
             card = add_empty_card(deck);
             assert_card_valid(*card);
             add_future_card(fc,(size_t)atoi(index), add_empty_card(deck));
+            ++i;
         }
         if(lineptr[i+1] == '\n' || lineptr[i+1] == '\0' || lineptr[i+1] == ' ' || lineptr[i+1] == EOF)
         {
@@ -39,6 +42,7 @@ deck_t * hand_from_string(const char * lineptr, future_cards_t * fc)
         add_card_to(deck, card);
     }
     free(card);
+    free(index);
     if(deck->n_cards < 5){
         perror("not enough cards in the hand");
         return NULL;
