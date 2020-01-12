@@ -26,6 +26,7 @@ deck_t * hand_from_string(const char * lineptr, future_cards_t * fc)
                 {
                     index[j] = '\0';
                 }
+                ++j;
             }
             card = add_empty_card(deck);
             assert_card_valid(*card);
