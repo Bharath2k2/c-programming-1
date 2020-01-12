@@ -1,52 +1,37 @@
-Grading at Sun Jan 12 02:02:15 UTC 2020
+Grading at Sun Jan 12 02:04:39 UTC 2020
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
-input.c:6:10: error: conflicting types for ‘hand_from_string’
- deck_t * hand_from_string(char * lineptr, future_cards_t * fc)
-          ^
-In file included from input.c:4:0:
-input.h:7:10: note: previous declaration of ‘hand_from_string’ was here
- deck_t * hand_from_string(const char * str, future_cards_t * fc);
-          ^
 input.c: In function ‘hand_from_string’:
-input.c:13:27: error: implicit declaration of function ‘strlen’ [-Werror=implicit-function-declaration]
-     for(size_t i = 0; i < strlen(lineptr); ++i)
-                           ^
-input.c:13:27: error: incompatible implicit declaration of built-in function ‘strlen’ [-Werror]
-input.c:13:27: note: include ‘<string.h>’ or provide a declaration of ‘strlen’
-input.c:19:19: error: assignment makes pointer from integer without a cast [-Werror=int-conversion]
+input.c:20:19: error: assignment makes pointer from integer without a cast [-Werror=int-conversion]
              index = lineptr[i];
                    ^
-input.c:22:49: error: comparison between pointer and integer [-Werror]
+input.c:23:49: error: comparison between pointer and integer [-Werror]
                  if(lineptr[i] == ' ' || lineptr == '\n')
                                                  ^
-input.c:36:14: error: incompatible types when assigning to type ‘card_t * {aka struct card_tag *}’ from type ‘card_t {aka struct card_tag}’
+input.c:25:32: error: assignment of read-only location ‘*(lineptr + (sizetype)(i * 1ul))’
+                     lineptr[i] = '\0';
+                                ^
+input.c:37:14: error: incompatible types when assigning to type ‘card_t * {aka struct card_tag *}’ from type ‘card_t {aka struct card_tag}’
          card = card_from_letters(lineptr[i], lineptr[i+1]);
               ^
-input.c:38:27: error: incompatible type for argument 2 of ‘add_card_to’
+input.c:39:27: error: incompatible type for argument 2 of ‘add_card_to’
          add_card_to(deck, card);
                            ^
 In file included from input.h:4:0,
-                 from input.c:4:
+                 from input.c:5:
 deck.h:17:6: note: expected ‘card_t {aka struct card_tag}’ but argument is of type ‘card_t * {aka struct card_tag *}’
  void add_card_to(deck_t * deck, card_t c);
       ^
 input.c: In function ‘read_input’:
-input.c:56:20: error: passing argument 1 of ‘getline’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+input.c:57:20: error: passing argument 1 of ‘getline’ from incompatible pointer type [-Werror=incompatible-pointer-types]
      while (getline(&lineptr, &n, f) >= 0)
                     ^
 In file included from input.c:1:0:
 /usr/include/stdio.h:678:20: note: expected ‘char ** restrict’ but argument is of type ‘const char **’
  extern _IO_ssize_t getline (char **__restrict __lineptr,
                     ^
-input.c:59:37: error: passing argument 1 of ‘hand_from_string’ discards ‘const’ qualifier from pointer target type [-Werror=discarded-qualifiers]
-         decks[i] = hand_from_string(lineptr, fc);
-                                     ^
-input.c:6:10: note: expected ‘char *’ but argument is of type ‘const char *’
- deck_t * hand_from_string(char * lineptr, future_cards_t * fc)
-          ^
-input.c:63:10: error: passing argument 1 of ‘free’ discards ‘const’ qualifier from pointer target type [-Werror=discarded-qualifiers]
+input.c:64:10: error: passing argument 1 of ‘free’ discards ‘const’ qualifier from pointer target type [-Werror=discarded-qualifiers]
      free(lineptr);
           ^
 In file included from input.c:2:0:
