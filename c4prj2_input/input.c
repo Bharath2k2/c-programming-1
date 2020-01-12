@@ -30,7 +30,7 @@ deck_t * hand_from_string(const char * lineptr, future_cards_t * fc)
             }
             card = add_empty_card(deck);
             assert_card_valid(*card);
-            add_future_card(fc,(size_t)atoi(index), add_empty_card(deck));
+            add_future_card(fc,(size_t)atoi(index), card);
             ++i;
         }  else {
             if(lineptr[i+1] == '\n' || lineptr[i+1] == '\0' || lineptr[i+1] == ' ' || lineptr[i+1] == EOF)
@@ -58,14 +58,17 @@ deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc)
     char * lineptr  = NULL;
     size_t n  = 0;
     deck_t ** decks = NULL;
-    if(*n_hands != 0) *n_hands = 0; 
+    deck_t * deck = NULL;
+    size_t count = 0;
     size_t i = 0;
     while (getline(&lineptr, &n, f) >= 0)
     {
-        decks = realloc(decks, ((*n_hands) + 1) * sizeof(*decks));
-        decks[i] = hand_from_string(lineptr, fc);
+        decks = realloc(decks, (count + 1) * sizeof(*decks));
+        deck = hand_from_string(lineptr, fc);
+        if(hand_from_string == NULL) continue;
+        decks[count] = deck;
         ++i;
-        ++(*n_hands);
+        ++count;
     }
     free(lineptr);
     return decks; 
