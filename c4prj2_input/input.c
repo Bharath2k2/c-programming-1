@@ -6,10 +6,10 @@
 
 deck_t * hand_from_string(const char * lineptr, future_cards_t * fc)
 {
-    deck_t * deck = NULL;
+    deck_t * deck = malloc(sizeof(*deck));
     deck->cards = NULL;
     deck->n_cards = 0;
-    char * index = malloc(strlen(lineptr) * sizeof(*index));
+    char * index = malloc(strlen(lineptr) * sizeof(char));
     for(size_t i = 0; i < strlen(lineptr); ++i)
     {
         if(lineptr[i] == '\n' || lineptr[i] == ' ') continue;
@@ -17,7 +17,7 @@ deck_t * hand_from_string(const char * lineptr, future_cards_t * fc)
         {
             ++i;
             size_t j = 0;
-            while(lineptr[i] != '\n' || lineptr[i] != ' ')
+            while(lineptr[i] != '\n' && lineptr[i] != ' ')
             {
                 index[j] = lineptr[i];
                 ++j; 
