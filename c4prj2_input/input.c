@@ -9,14 +9,13 @@ deck_t * hand_from_string(const char * lineptr, future_cards_t * fc)
     deck_t * deck = malloc(sizeof(*deck));
     deck->cards = NULL;
     deck->n_cards = 0;
-    size_t length = strlen(lineptr);
-    char * index = malloc(length * sizeof(char));
-    for(size_t i = 0; i < length; ++i)
+    for(size_t i = 0; i < strlen(lineptr); ++i)
     {
         if(lineptr[i] == '\n' || lineptr[i] == ' ') continue;
         if(lineptr[i] == '?')
         {
             ++i;
+            char index[strlen(lineptr)];
             size_t j = 0;
             while(lineptr[i] != '\n' && lineptr[i] != ' ')
             {
@@ -32,7 +31,6 @@ deck_t * hand_from_string(const char * lineptr, future_cards_t * fc)
             ++i;
         }
     }
-    free(index);
     if(deck->n_cards < 5){
         perror("not enough cards in the hand");
         return NULL;
