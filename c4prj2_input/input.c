@@ -4,7 +4,7 @@
 #include<string.h>
 #include "input.h"
 
-deck_t * hand_from_string(const char * lineptr, future_cards_t * fc)
+deck_t * hand_from_string(const char * str, future_cards_t * fc)
 {
     deck_t* deck=malloc(sizeof(*deck));
     deck->cards = NULL;
