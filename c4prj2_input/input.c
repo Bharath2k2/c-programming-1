@@ -19,11 +19,11 @@ deck_t * hand_from_string(const char * lineptr, future_cards_t * fc)
             size_t j = 0;
             while(lineptr[i] != '\n' || lineptr[i] != ' ')
             {
-                index[j] == lineptr[i];
+                index[j] = lineptr[i];
                 ++j; 
                 ++i;
             }
-            index[j] == '\0';
+            index[j] = '\0';
             add_future_card(fc,atoi(index), add_empty_card(deck));
         }  else {
             card_t c = card_from_letters(lineptr[i], lineptr[i+1]);
