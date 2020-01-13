@@ -9,17 +9,17 @@ deck_t * hand_from_string(const char * lineptr, future_cards_t * fc)
     deck_t* deck=malloc(sizeof(*deck));
     deck->cards = NULL;
     deck->n_cards=0;
-    for(int i=0;i<strlen(str);i++)
+    for(int i=0;i<strlen(lineptr);i++)
     {
         if((str[i] == '\n')||(str[i] == ' ')) continue;
         if(str[i] == '?')
         {
             i++;
-            char index[strlen(str)];
+            char index[strlen(lineptr)];
             int j=0;
-            while(!((str[i] == '\n')||(str[i] == ' '))) 
+            while(!((lineptr[i] == '\n')||(lineptr[i] == ' '))) 
             {
-            index[j]=str[i];
+            index[j]=lineptr[i];
             i++;
             j++;
             }
@@ -27,7 +27,7 @@ deck_t * hand_from_string(const char * lineptr, future_cards_t * fc)
             add_future_card(fc,atoi(index),add_empty_card(deck)) ;
 
         } else {
-            card_t x = card_from_letters(str[i],str[i+1]);
+            card_t x = card_from_letters(lineptr[i],lineptr[i+1]);
             add_card_to(deck,x);
             i++;
         }
