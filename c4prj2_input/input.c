@@ -11,8 +11,8 @@ deck_t * hand_from_string(const char * lineptr, future_cards_t * fc)
     deck->n_cards=0;
     for(int i=0;i<strlen(lineptr);i++)
     {
-        if((str[i] == '\n')||(str[i] == ' ')) continue;
-        if(str[i] == '?')
+        if((lineptr[i] == '\n')||(lineptr[i] == ' ')) continue;
+        if(lineptr[i] == '?')
         {
             i++;
             char index[strlen(lineptr)];
