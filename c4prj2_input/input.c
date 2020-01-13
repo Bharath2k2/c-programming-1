@@ -6,18 +6,18 @@
 
 deck_t * hand_from_string(const char * lineptr, future_cards_t * fc)
 {
-    deck_t * deck = malloc(sizeof(*deck));
+    deck_t * deck = NULL;
     card_t * card = malloc(sizeof(*card));
     deck->cards = NULL;
     deck->n_cards = 0;
     char * index = NULL;
     for(size_t i = 0; i < strlen(lineptr); ++i)
     {
-        if(lineptr[i] == '\n' || lineptr[i] == '\0' || lineptr[i] == ' ') continue;
+        if(lineptr[i] == '\n' || lineptr[i] == ' ') continue;
         if(i == '?')
         {
             ++i;
-            index = malloc((strlen(lineptr) + 2) * sizeof(*index));
+            index = malloc(strlen(lineptr) * sizeof(*index));
             strcpy(index, &lineptr[i]);
             size_t j = 0;
             while(index[j] != '\0')
@@ -30,17 +30,13 @@ deck_t * hand_from_string(const char * lineptr, future_cards_t * fc)
             }
             card = add_empty_card(deck);
             assert_card_valid(*card);
-            add_future_card(fc,(size_t)atoi(index), card);
-            ++i;
+            add_future_card(fc,atoi(index), card);
+            i += j;
         }  else {
-            if(lineptr[i+1] == '\n' || lineptr[i+1] == '\0' || lineptr[i+1] == ' ' || lineptr[i+1] == EOF)
-            {
-            perror("invalid card value, please provide valid card");
-            return NULL;
-            }
             *card = card_from_letters(lineptr[i], lineptr[i+1]);
             assert_card_valid(*card);
             add_card_to(deck, *card);
+            ++i;
         }
     }
     free(card);
