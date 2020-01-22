@@ -9,31 +9,34 @@
 #include "input.h"
 
 int win_hand(deck_t ** deck_array,int n_hands){
-  int w[n_hands+1];
-  for(int u=0;u<n_hands+1;u++) w[u]=0;  
+  int * w = sizeof((n_hands+1) * sizeof(*w));
+  for(int u = 0; u < n_hands+1; ++u) w[u]=0;  
   int v=0;
-  for(int i =0;i<n_hands-1;i++){
-    for (int j=i+1;j<n_hands;j++){
+  for(int i = 0; i<n_hands-1; ++i)
+  {
+    for (int j = i+1; j < n_hands; ++j)
+    {
       // print_hand(deck_array[i]);
       //            print_hand(deck_array[j]);
       // printf("\n");
       v=compare_hands(deck_array[i],deck_array[j]);
-      if(v>0) w[i]++;
-      else if (v<0) w[j]++;
-      else w[n_hands]++;  
+      if(v > 0) ++w[i];
+      else if(v < 0) ++w[j];
+      else ++w[n_hands];  
     }
   }
   unsigned largest= 0;
-  for(int x=0;x<n_hands+1;x++){
+  for(int x=0;x<n_hands+1; ++x){
     if(w[x] > w[largest])largest=x;
   }
    int count=0;  
     if(w[n_hands]>0){ 
-      for(int x=0;x<n_hands+1;x++){
-      	if(w[x] == w[largest]) count++;
+      for(int x=0;x<n_hands+1; ++x){
+      	if(w[x] == w[largest]) ++count;
 	 }
      }
     if(count>1) return n_hands;
+  free(w);
   return  largest;  
 }
 
@@ -67,13 +70,13 @@ int main(int argc, char ** argv) {
     //Shuffle the deck of remaining cards
     shuffle(sh);
     //Assign unknown cards from the shuffled deck
-    future_cards_from_deck(sh,fc);
+    future_cards_from_deck(sh, fc);
     //Use compare_hands (from Course 3)
-    int c =win_hand(deck_array,n_hands);
+    int c = win_hand(deck_array,n_hands);
     win_array[c]++;
   }
   //you just need to print your results
-  for(size_t j=0;j < n_hands; ++j)
+  for(size_t j = 0; j < n_hands; ++j)
   {
     printf("Hand %zu won %u / %u times (%.2f%%)\n",j,win_array[j],num_trials,(((float)win_array[j])/num_trials)*100);
   }
