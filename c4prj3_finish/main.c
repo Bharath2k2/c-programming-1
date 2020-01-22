@@ -9,7 +9,7 @@
 #include "input.h"
 
 int win_hand(deck_t ** deck_array,int n_hands){
-  int * w = malloc(sizeof((n_hands+1) * sizeof(*w)));
+  int * w = malloc((n_hands + 1) * sizeof(*w));
   for(int u = 0; u < n_hands+1; ++u) w[u]=0;  
   int v=0;
   for(int i = 0; i<n_hands-1; ++i)
